@@ -1,0 +1,17 @@
+{
+    "id": "parameter_delete_local",
+    "title": "Delete parameter locally",
+    "description": "Удалите параметр retries из buildTask и обновите оба локальных вызова через parameter textobject.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Начните с сигнатуры buildTask.\n2. Выделите параметр retries через parameter textobject и удалите его.\n3. Уберите соответствующий аргумент в обоих вызовах.\n4. Сохраните файл.",
+    "tags": [
+        "select_tree_parameter",
+        "edit_delete",
+        "edit_change"
+    ],
+    "author_time": 16.0
+}

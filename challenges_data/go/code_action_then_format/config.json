@@ -1,0 +1,17 @@
+{
+    "id": "code_action_then_format",
+    "title": "Code action then format",
+    "description": "Добавьте недостающий import strings через code action, затем отформатируйте map-литерал в том же файле.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "exact",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Сначала исправьте diagnostic через '<space>a'.\n2. Затем выделите map-литерал и отформатируйте его.\n3. Не меняйте остальной файл без необходимости.\n4. Сохраните результат.",
+    "tags": [
+        "lsp_code_action",
+        "format_selection",
+        "diagnostics_nav"
+    ],
+    "author_time": 20.0
+}

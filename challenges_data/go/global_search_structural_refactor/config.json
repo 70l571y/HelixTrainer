@@ -1,0 +1,27 @@
+{
+    "id": "global_search_structural_refactor",
+    "title": "Global search with structural refactor",
+    "description": "Найдите вызовы legacyWrap по workspace и структурно замените их на modernWrap в двух файлах.",
+    "difficulty": "Hard",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "service.go",
+        "worker.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "service.go": "goal_service.go",
+        "worker.go": "goal_worker.go"
+    },
+    "tips": "1. Откройте global search по legacyWrap.\n2. Перейдите к каждому совпадению.\n3. Структурно замените legacyWrap(...) на modernWrap(...).\n4. Исправьте все файлы и сохраните их.",
+    "tags": [
+        "search_global",
+        "select_syntax",
+        "edit_change",
+        "buffer_switch"
+    ],
+    "author_time": 29.0
+}

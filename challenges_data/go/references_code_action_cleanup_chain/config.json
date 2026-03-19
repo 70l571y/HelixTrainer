@@ -1,0 +1,25 @@
+{
+    "id": "references_code_action_cleanup_chain",
+    "title": "References and code action chain",
+    "description": "Переименуйте helper call sites через references, затем удалите ставший лишним import через code action.",
+    "difficulty": "Hard",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "helper.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "helper.go": "goal_helper.go"
+    },
+    "tips": "1. Откройте references для buildTemp.\n2. Обновите вызов на buildFinal.\n3. После правки удалите лишний import strings через code action.\n4. Сохраните оба файла.",
+    "tags": [
+        "lsp_references",
+        "lsp_code_action",
+        "edit_change",
+        "buffer_switch"
+    ],
+    "author_time": 30.0
+}

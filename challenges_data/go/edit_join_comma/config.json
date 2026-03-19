@@ -1,0 +1,16 @@
+{
+    "id": "edit_join_comma",
+    "title": "Объединение строк",
+    "description": "Объедините импорты в одну строку через запятую.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Выделите строки и объедините их используя x и J\n2. выделите от второго \"import\" до конца используя ;vbbbb\n3. замените import на ; используя c",
+    "tags": [
+        "edit_join",
+        "edit_insert"
+    ],
+    "author_time": 11.3
+}

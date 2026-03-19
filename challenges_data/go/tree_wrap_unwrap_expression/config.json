@@ -1,0 +1,18 @@
+{
+    "id": "tree_wrap_unwrap_expression",
+    "title": "Wrap and unwrap expression",
+    "description": "Структурно заверните значение в strings.TrimSpace, а затем уберите лишнюю внешнюю обёртку у второго выражения.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Используйте syntax-aware выделение для первого выражения.\n2. Оберните его в strings.TrimSpace.\n3. У второго выражения снимите лишнюю обёртку.\n4. Сохраните итог.",
+    "tags": [
+        "select_syntax",
+        "surround_add",
+        "surround_delete",
+        "edit_change"
+    ],
+    "author_time": 21.0
+}

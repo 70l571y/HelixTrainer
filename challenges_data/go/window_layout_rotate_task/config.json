@@ -1,0 +1,27 @@
+{
+    "id": "window_layout_rotate_task",
+    "title": "Rotate window layout",
+    "description": "Откройте два дополнительных окна, измените layout и исправьте строку в reference.go.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "reference.go",
+        "notes.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "reference.go": "goal_reference.go",
+        "notes.go": "goal_notes.go"
+    },
+    "tips": "1. Откройте два файла в split-окнах.\n2. Измените layout через window commands.\n3. Исправьте строку в reference.go.\n4. Вернитесь в основной буфер и сохраните все файлы.",
+    "tags": [
+        "window_layout",
+        "window_move",
+        "window_split",
+        "edit_change"
+    ],
+    "author_time": 22.0
+}

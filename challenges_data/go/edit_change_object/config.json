@@ -1,0 +1,16 @@
+{
+    "id": "edit_change_object",
+    "title": "Изменить внутри",
+    "description": "Очистите содержимое слайса.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Перейдите внутрь скобок [].\n2. 'mi[' (match inside brackets).\n3. 'c' (change) -> введите ничего (или просто 'd' для удаления).",
+    "tags": [
+        "select_object",
+        "edit_change"
+    ],
+    "author_time": 7.0
+}

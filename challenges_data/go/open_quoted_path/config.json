@@ -1,0 +1,23 @@
+{
+  "id": "open_quoted_path",
+  "title": "Open quoted path",
+  "description": "Откройте 'team notes.go' через ':open', исправьте заголовок и сохраните оба файла.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": ["team notes.go"],
+  "validation": {
+    "challenge.go": "goal.go",
+    "team notes.go": "goal_team notes.go"
+  },
+  "tips": "1. Откройте файл через ':open ''team notes.go'''.\n2. Исправьте строку в файле с пробелом в имени.\n3. Вернитесь в основной буфер.\n4. Сохраните оба файла.\n5. Завершите через ':wq'.",
+  "tags": [
+    "command_mode",
+    "buffer_open",
+    "file_save",
+    "track_optional_command_line"
+  ],
+  "author_time": 16.0
+}

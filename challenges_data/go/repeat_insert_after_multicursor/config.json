@@ -1,0 +1,17 @@
+{
+    "id": "repeat_insert_after_multicursor",
+    "title": "Repeat insert after multicursor",
+    "description": "Добавьте суффикс _ok к трём выбранным словам, используя multicursor и repeat insert.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Создайте курсоры на трёх словах.\n2. Выполните вставку суффикса на одном месте.\n3. Повторите вставку через '.'.\n4. Измените все три случая одинаково.",
+    "tags": [
+        "repeat_insert",
+        "multicursor",
+        "edit_insert"
+    ],
+    "author_time": 18.0
+}

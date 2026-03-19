@@ -1,0 +1,21 @@
+{
+    "id": "window_close_others_focus",
+    "title": "Оставить только текущее окно",
+    "description": "Откройте helper.go в split, скопируйте значение releaseName и закройте остальные окна через Ctrl-w o.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "helper.go"
+    ],
+    "tips": "1. Откройте helper.go в split.\n2. Скопируйте строку со значением releaseName.\n3. Вернитесь в основной файл и вставьте значение вместо draftName.\n4. Закройте остальные окна: 'Ctrl-w o'.",
+    "tags": [
+        "window_split",
+        "window_move",
+        "window_close",
+        "edit_yank_paste"
+    ],
+    "author_time": 18.0
+}

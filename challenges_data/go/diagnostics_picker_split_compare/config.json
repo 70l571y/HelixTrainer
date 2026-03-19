@@ -1,0 +1,27 @@
+{
+    "id": "diagnostics_picker_split_compare",
+    "title": "Diagnostics split compare",
+    "description": "Откройте diagnostic, сверяйтесь с reference.go в split и исправьте ошибки в двух файлах.",
+    "difficulty": "Hard",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "service.go",
+        "reference.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "service.go": "goal_service.go",
+        "reference.go": "goal_reference.go"
+    },
+    "tips": "1. Откройте diagnostics picker и перейдите к ошибке.\n2. Откройте reference.go в split для сравнения.\n3. Исправьте challenge.go и service.go по образцу.\n4. Сохраните все файлы.",
+    "tags": [
+        "picker_diagnostics",
+        "window_split",
+        "jumplist",
+        "edit_change"
+    ],
+    "author_time": 27.0
+}

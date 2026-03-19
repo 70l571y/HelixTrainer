@@ -1,0 +1,17 @@
+{
+    "id": "manual_jump_checkpoint",
+    "title": "Manual jump checkpoint",
+    "description": "Сохраните текущую позицию в jumplist вручную, перейдите к helper внизу файла, исправьте имя и вернитесь назад.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Поставьте manual jump checkpoint через 'Ctrl-s'.\n2. Перейдите к helper внизу файла.\n3. Исправьте labelFn -> labelFunc.\n4. Вернитесь к сохранённой точке через jumplist.\n5. Обновите вызов.",
+    "tags": [
+        "jumplist",
+        "movement_goto",
+        "edit_change"
+    ],
+    "author_time": 16.0
+}

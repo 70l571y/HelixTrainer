@@ -1,0 +1,16 @@
+{
+    "id": "select_syntax_tree",
+    "title": "Синтаксический альпинист",
+    "description": "Удалите весь блок 'if useLegacyMode' (логика и обёртка) чисто.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Перейдите внутрь блока 'if'.\n2. Нажмите 'Alt-o' несколько раз для расширения выделения (Строка -> Блок -> Функция).\n3. 'd' для удаления.\n(Примечание: Требуется tree-sitter. Начало на ключевом слове 'if' быстрее выделяет блок).",
+    "tags": [
+        "select_syntax",
+        "edit_delete"
+    ],
+    "author_time": 6.22
+}

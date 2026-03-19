@@ -1,0 +1,17 @@
+{
+    "id": "jumplist_short_roundtrip",
+    "title": "Short jumplist roundtrip",
+    "description": "Перейдите к helper внизу файла, исправьте имя функции и вернитесь к месту вызова через jumplist.",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Перейдите к вызову helper.\n2. Прыгните к определению любым быстрым способом.\n3. Исправьте helperFn -> helperFunc.\n4. Вернитесь через jumplist и обновите вызов.",
+    "tags": [
+        "jumplist",
+        "movement_goto",
+        "edit_change"
+    ],
+    "author_time": 14.0
+}

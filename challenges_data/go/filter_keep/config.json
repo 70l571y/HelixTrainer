@@ -1,0 +1,19 @@
+{
+    "id": "filter_keep",
+    "title": "Фильтрация курсоров",
+    "description": "Создайте мультикурсор на всех строках и оставьте только содержащие 'Error'.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "ignore_whitespace",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Выделите все строки с логами (x или vip).\n2. Разделите выделение на строки: 'Alt-s'.\n3. Отфильтруйте: 'K' -> 'Error' -> Enter.\n4. Или используйте Alt-K для удаления совпадений.\n5. Удалите оставшиеся строки с d.",
+    "tags": [
+        "filter",
+        "multicursor",
+        "select_split_lines",
+        "search_basic",
+        "edit_delete"
+    ],
+    "author_time": 22.0
+}

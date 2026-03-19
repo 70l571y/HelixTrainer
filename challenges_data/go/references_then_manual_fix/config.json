@@ -1,0 +1,26 @@
+{
+    "id": "references_then_manual_fix",
+    "title": "References then manual fix",
+    "description": "Найдите ссылки на buildCode и измените только два вызова в других файлах, не трогая локальный helper.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "service.go",
+        "worker.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "service.go": "goal_service.go",
+        "worker.go": "goal_worker.go"
+    },
+    "tips": "1. Поставьте курсор на buildCode.\n2. Откройте references.\n3. Измените только вызовы в service.go и worker.go на buildTaskCode.\n4. Не меняйте локальный helper в challenge.go.\n5. Сохраните все файлы.",
+    "tags": [
+        "lsp_references",
+        "edit_change",
+        "buffer_switch"
+    ],
+    "author_time": 20.0
+}

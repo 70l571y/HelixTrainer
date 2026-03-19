@@ -1,0 +1,16 @@
+{
+    "id": "textobject_conditional_cleanup",
+    "title": "Conditional textobject cleanup",
+    "description": "Удалите весь условный блок fallback, оставив только основной return.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Поставьте курсор внутрь fallback if.\n2. Используйте text object для условного блока.\n3. Удалите весь if целиком.\n4. Сохраните основной return.",
+    "tags": [
+        "select_object",
+        "edit_delete"
+    ],
+    "author_time": 17.0
+}

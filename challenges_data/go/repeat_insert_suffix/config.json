@@ -1,0 +1,17 @@
+{
+    "id": "repeat_insert_suffix",
+    "title": "Повтор вставки",
+    "description": "Добавьте восклицательный знак в конец каждой строки, повторяя вставку через '.'.",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Перейдите в конец первой строки: 'A' -> '!' -> Esc.\n2. Перейдите к следующей строке.\n3. Нажмите '.' чтобы повторить вставку.\n4. Повторите для остальных строк.",
+    "tags": [
+        "repeat_insert",
+        "edit_insert",
+        "movement_basic"
+    ],
+    "author_time": 9.0
+}
