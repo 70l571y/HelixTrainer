@@ -1,0 +1,27 @@
+{
+    "id": "definition_references_roundtrip_chain",
+    "title": "Definition references roundtrip",
+    "description": "Перейдите к определению normalizeCode, затем откройте references и обновите определение и оба вызова на sanitizeCode.",
+    "difficulty": "Hard",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "service.go",
+        "worker.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "service.go": "goal_service.go",
+        "worker.go": "goal_worker.go"
+    },
+    "tips": "1. Поставьте курсор на normalizeCode.\n2. Перейдите к определению, затем посмотрите references.\n3. Переименуйте определение и оба вызова на sanitizeCode.\n4. Вернитесь к месту старта через jumplist.\n5. Сохраните все файлы.",
+    "tags": [
+        "lsp_definition",
+        "lsp_references",
+        "jumplist",
+        "edit_change"
+    ],
+    "author_time": 28.0
+}

@@ -1,0 +1,18 @@
+{
+    "id": "selection_cycle_duplicates",
+    "title": "Цикл по выделениям",
+    "description": "Оставьте только нужные 'would' и замените их на 'wood', переключая основное выделение.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "ignore_whitespace",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Выделите обе строки: '2x'.\n2. Нажмите 's' и введите 'would'.\n3. Используйте '(' и ')' чтобы сделать нужное выделение основным.\n4. 'Alt-,' чтобы удалить лишнее основное выделение.\n5. 'c' -> 'wood' -> Esc.",
+    "tags": [
+        "selection_cycle",
+        "select_line",
+        "select_regex",
+        "edit_change"
+    ],
+    "author_time": 19.0
+}

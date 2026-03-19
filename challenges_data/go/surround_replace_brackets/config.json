@@ -1,0 +1,16 @@
+{
+    "id": "surround_replace_brackets",
+    "title": "Замена скобок",
+    "description": "Измените возвращаемый кортеж (круглые скобки) на слайс (квадратные скобки).",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Перейдите внутрь '(x, y), fx fx (или fx Alt-.) быстро в этой ситуации'.\n2. Введите 'mr([' (Match Replace '(' с '[').",
+    "tags": [
+        "surround_replace",
+        "repeat_find"
+    ],
+    "author_time": 5.53
+}

@@ -1,0 +1,26 @@
+{
+    "id": "crossfile_parameter_reorder",
+    "title": "Cross-file parameter reorder",
+    "description": "Поменяйте порядок параметров runJob на retries, timeout и обновите все вызовы в нескольких файлах.",
+    "difficulty": "Hard",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "service.go",
+        "worker.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "service.go": "goal_service.go",
+        "worker.go": "goal_worker.go"
+    },
+    "tips": "1. Начните с сигнатуры runJob.\n2. Используйте parameter textobject, чтобы переставить timeout и retries.\n3. Найдите все call sites и повторите порядок аргументов.\n4. Сохраните все файлы.",
+    "tags": [
+        "select_tree_parameter",
+        "lsp_references",
+        "edit_yank_paste"
+    ],
+    "author_time": 28.0
+}

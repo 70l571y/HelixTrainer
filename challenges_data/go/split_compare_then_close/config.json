@@ -1,0 +1,25 @@
+{
+    "id": "split_compare_then_close",
+    "title": "Split compare then close",
+    "description": "Откройте reference.go в split, перенесите правильную строку в основной файл и закройте лишнее окно.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "reference.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "reference.go": "goal_reference.go"
+    },
+    "tips": "1. Откройте reference.go в split.\n2. Сравните строки и перенесите правильное значение в challenge.go.\n3. Закройте лишнее окно через 'Ctrl-w q' или аналог.\n4. Сохраните файлы.",
+    "tags": [
+        "window_split",
+        "window_close",
+        "buffer_switch",
+        "edit_yank_paste"
+    ],
+    "author_time": 18.0
+}

@@ -1,0 +1,17 @@
+{
+    "id": "jumplist_two_hop_return",
+    "title": "Two-hop jumplist return",
+    "description": "Сделайте два быстрых перехода по файлу, исправьте helper и statusLabel, затем вернитесь к началу через jumplist.",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. От места вызова прыгните к helper ниже по файлу.\n2. Исправьте helperFn на helperFunc.\n3. Затем прыгните к statusLabel и исправьте 'draf' на 'draft'.\n4. Вернитесь к началу через jumplist.\n5. Обновите вызов и сохраните файл.",
+    "tags": [
+        "jumplist",
+        "movement_goto",
+        "edit_change"
+    ],
+    "author_time": 13.0
+}

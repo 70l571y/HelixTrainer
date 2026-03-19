@@ -1,0 +1,19 @@
+{
+  "id": "buffer_switch_history",
+  "title": "История буферов",
+  "description": "Откройте service.go и config.go через hotkey-driven navigation, затем вернитесь по истории буферов и вставьте buildMode в основной файл.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": ["service.go", "config.go"],
+  "tips": "1. Откройте service.go и config.go через '<space>f'.\n2. В config.go скопируйте значение buildMode.\n3. Вернитесь в основной файл через 'ga'.\n4. Вставьте значение вместо localMode.",
+  "tags": [
+    "buffer_open",
+    "buffer_switch",
+    "edit_yank_paste",
+    "track_core_hotkey"
+  ],
+  "author_time": 17.0
+}

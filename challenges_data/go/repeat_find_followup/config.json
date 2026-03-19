@@ -1,0 +1,17 @@
+{
+    "id": "repeat_find_followup",
+    "title": "Repeat find selection",
+    "description": "Используйте find и repeat-find, чтобы заменить три пары круглых скобок на квадратные.",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "ignore_whitespace",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Найдите первую '(' через f или t.\n2. Замените её пару скобок.\n3. Повторяйте последнее find-выделение через 'Alt-.'.\n4. Исправьте все три случая.",
+    "tags": [
+        "movement_find",
+        "repeat_find",
+        "surround_replace"
+    ],
+    "author_time": 13.0
+}

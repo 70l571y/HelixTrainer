@@ -1,0 +1,26 @@
+{
+  "id": "matrix_split",
+  "title": "Матричные операции",
+  "description": "Рефакторинг кода через split hotkeys: переместите dotProduct и transpose в math_lib.go, а sigmoid верните в основной файл.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal_main.go",
+  "main_file_name": "matrix_processor.go",
+  "extra_files": ["math_lib.go"],
+  "validation": {
+    "matrix_processor.go": "goal_main.go",
+    "math_lib.go": "goal_lib.go"
+  },
+  "tips": "1. Откройте split через '<C-w>v' и загрузите math_lib.go через '<space>f'.\n2. Используйте '<C-w>h/l' для переходов и '<C-w>t' для transpose layout.\n3. Переместите dotProduct и transpose в math_lib.go.\n4. Переместите sigmoid обратно в основной файл.\n5. Сохраните оба файла.",
+  "tags": [
+    "file_save",
+    "window_split",
+    "window_move",
+    "window_layout",
+    "edit_yank_paste",
+    "track_core_hotkey"
+  ],
+  "author_time": 42.0
+}
