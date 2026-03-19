@@ -1,0 +1,24 @@
+{
+    "id": "search_global_todo",
+    "title": "Global search",
+    "description": "Используйте global search picker, чтобы найти TODO в другом файле и заменить его на DONE.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "worker.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "worker.go": "goal_worker.go"
+    },
+    "tips": "1. Откройте global search: '<space>/'.\n2. Введите 'TODO'.\n3. Перейдите к совпадению в worker.go.\n4. Замените TODO на DONE и сохраните файл.",
+    "tags": [
+        "search_global",
+        "search_basic",
+        "edit_change"
+    ],
+    "author_time": 13.0
+}

@@ -1,0 +1,20 @@
+{
+  "id": "windows_split",
+  "title": "Разделение окон",
+  "description": "Откройте utils.go в split hotkeys-способом и скопируйте функцию в основной файл.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": ["utils.go"],
+  "tips": "1. Откройте вертикальный split через '<C-w>v'.\n2. В новом окне откройте utils.go через '<space>f'.\n3. Переключайтесь между окнами через '<C-w>h/l'.\n4. Выделите функцию и скопируйте её.\n5. Вернитесь в основной файл, вставьте код и закройте окно через '<C-w>q'.",
+  "tags": [
+    "window_split",
+    "window_move",
+    "window_close",
+    "edit_yank_paste",
+    "track_core_hotkey"
+  ],
+  "author_time": 25.0
+}

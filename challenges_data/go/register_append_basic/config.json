@@ -1,0 +1,16 @@
+{
+    "id": "register_append_basic",
+    "title": "Append to named register",
+    "description": "Соберите строку 'alpha-beta' из двух отдельных фрагментов, используя один named register с добавлением.",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Скопируйте 'alpha' в named register.\n2. Добавьте к нему '-beta' через append в тот же register.\n3. Вставьте готовую строку в result.\n4. Не набирайте итог вручную.",
+    "tags": [
+        "register",
+        "edit_yank_paste"
+    ],
+    "author_time": 14.0
+}

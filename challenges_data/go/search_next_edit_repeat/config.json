@@ -1,0 +1,17 @@
+{
+    "id": "search_next_edit_repeat",
+    "title": "Search next and edit repeat",
+    "description": "Найдите draft через '/', затем пройдите по совпадениям через n и исправьте три строки на final.",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Найдите первое 'draft' через '/'.\n2. Исправьте его на 'final'.\n3. Перейдите к следующему совпадению через 'n'.\n4. Повторите, пока все три строки не станут final.\n5. Не меняйте строку archive.",
+    "tags": [
+        "search_basic",
+        "search_next",
+        "edit_change"
+    ],
+    "author_time": 10.0
+}

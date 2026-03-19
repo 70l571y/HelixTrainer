@@ -1,0 +1,17 @@
+{
+    "id": "hello_world",
+    "title": "Hello World Fix",
+    "description": "Исправьте оператор print, чтобы вывести 'Hello, World!'",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "Базовое редактирование:\n1. Перемещайтесь с 'h', 'j', 'k', 'l'.\n2. Перейдите к опечатке.\n3. Замените символ: 'r' -> правильный символ.\n4. Или измените текст: 'c' -> ввод -> Esc.",
+    "tags": [
+        "edit_insert",
+        "edit_delete",
+        "movement_basic"
+    ],
+    "author_time": 12.14
+}

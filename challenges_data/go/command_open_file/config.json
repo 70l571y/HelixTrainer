@@ -1,0 +1,23 @@
+{
+  "id": "command_open_file",
+  "title": "Open file from command mode",
+  "description": "Откройте settings.go через ':o', исправьте строку заголовка и сохраните оба файла.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": ["settings.go"],
+  "validation": {
+    "challenge.go": "goal.go",
+    "settings.go": "goal_settings.go"
+  },
+  "tips": "1. Откройте settings.go через ':o settings.go'.\n2. Исправьте строку 'Helxi' на 'Helix'.\n3. Сохраните settings.go и вернитесь в основной файл.\n4. Завершите через ':wq'.",
+  "tags": [
+    "command_mode",
+    "buffer_open",
+    "file_save",
+    "track_optional_command_line"
+  ],
+  "author_time": 15.0
+}

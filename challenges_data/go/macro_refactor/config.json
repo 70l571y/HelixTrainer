@@ -1,0 +1,17 @@
+{
+    "id": "macro_refactor",
+    "title": "Запись макроса",
+    "description": "Запишите макрос для добавления префикса 'log: ' к 5 строкам логов и примените его.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "ignore_whitespace",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Перейдите к первой строке с 'INFO'.\n2. Начните запись: 'q' -> 'a' (регистр 'a').\n3. Добавьте 'log: ' (вставка 'i' -> ввод -> Esc).\n4. Перейдите к следующей строке: 'j'.\n5. Остановите запись: 'q'.\n6. Воспроизведите 4 раза: '4' -> '@' -> 'a'.",
+    "tags": [
+        "macro",
+        "edit_insert",
+        "movement_basic"
+    ],
+    "author_time": 18.0
+}

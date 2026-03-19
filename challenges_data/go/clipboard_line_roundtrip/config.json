@@ -1,0 +1,17 @@
+{
+    "id": "clipboard_line_roundtrip",
+    "title": "Clipboard line roundtrip",
+    "description": "Скопируйте строку badge в system clipboard и вставьте её в target, не меняя source.",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Скопируйте строку badge в system clipboard.\n2. Перейдите к target.\n3. Вставьте значение в target.\n4. Не меняйте source badge.",
+    "tags": [
+        "clipboard_system",
+        "select_line",
+        "edit_yank_paste"
+    ],
+    "author_time": 13.0
+}

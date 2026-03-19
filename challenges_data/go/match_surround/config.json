@@ -1,0 +1,17 @@
+{
+    "id": "match_surround",
+    "title": "Окружение скобками",
+    "description": "Исправьте синтаксис слайса: добавьте кавычки к словам и измените () на [].",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. используйте C и w для выделения всех слов внутри ()\n2. 'ms\"' для превращения слов в строки\n3. 'mr([' для замены () на [].",
+    "tags": [
+        "surround_add",
+        "surround_replace",
+        "select_object"
+    ],
+    "author_time": 11.17
+}

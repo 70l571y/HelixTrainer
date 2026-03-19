@@ -1,0 +1,17 @@
+{
+    "id": "selection_rotate_refactor_values",
+    "title": "Rotate refactor values",
+    "description": "Циклически перераспределите значения low, medium, high между тремя строками в нужном порядке.",
+    "difficulty": "Hard",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Создайте три выделения на значениях.\n2. Используйте rotate contents.\n3. Повторяйте, пока порядок не станет high, low, medium.\n4. Не меняйте сами ключи.",
+    "tags": [
+        "selection_rotate_contents",
+        "selection_cycle",
+        "multicursor"
+    ],
+    "author_time": 22.0
+}

@@ -1,0 +1,17 @@
+{
+    "id": "tree_syntax_expand_if_cleanup",
+    "title": "Syntax expand if cleanup",
+    "description": "Уберите лишнюю if-обёртку и оставьте только полезный return, используя syntax-aware выделение.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Поставьте курсор внутрь if-блока.\n2. Расширьте выделение по синтаксису через 'Alt-o'.\n3. Удалите только лишнюю обёртку.\n4. Сохраните полезный return.",
+    "tags": [
+        "select_syntax",
+        "edit_delete",
+        "edit_change"
+    ],
+    "author_time": 18.0
+}

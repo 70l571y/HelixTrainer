@@ -1,0 +1,24 @@
+{
+    "id": "picker_diagnostics_fix_return",
+    "title": "Diagnostics picker fix and return",
+    "description": "Исправьте две ошибки через diagnostics picker и вернитесь в исходный буфер после перехода в helper.go.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "helper.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "helper.go": "goal_helper.go"
+    },
+    "tips": "1. Откройте diagnostics picker.\n2. Исправьте ошибку в текущем файле.\n3. Перейдите ко второй ошибке в helper.go.\n4. Вернитесь в исходный буфер через history/previous buffer.\n5. Сохраните оба файла.",
+    "tags": [
+        "picker_diagnostics",
+        "buffer_switch",
+        "diagnostics_nav"
+    ],
+    "author_time": 17.0
+}

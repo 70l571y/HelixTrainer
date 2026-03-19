@@ -1,0 +1,24 @@
+{
+    "id": "search_global_jump_back",
+    "title": "Global search and jump back",
+    "description": "Найдите TODO в report.go, замените на DONE и вернитесь в основной файл, чтобы обновить строку статуса.",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "report.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "report.go": "goal_report.go"
+    },
+    "tips": "1. Откройте global search: '<space>/'.\n2. Найдите 'TODO' и перейдите в report.go.\n3. Замените TODO на DONE.\n4. Вернитесь через 'Ctrl-o' или 'Ctrl-s'.\n5. В challenge.go измените статус на 'back in challenge.go'.",
+    "tags": [
+        "search_global",
+        "jumplist",
+        "edit_change"
+    ],
+    "author_time": 16.0
+}

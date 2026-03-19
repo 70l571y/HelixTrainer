@@ -1,0 +1,16 @@
+{
+    "id": "text_objects_advanced",
+    "title": "Продвинутые текстовые объекты",
+    "description": "Удалите вложенные структуры используя mai (around indent) и mii (inside indent).",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Перейдите внутрь вложенного if.\n2. Используйте 'mii' для выделения содержимого блока.\n3. 'd' для удаления.\n4. Для внешнего блока используйте 'mai' для выделения с отступом.\n5. 'd' для удаления.",
+    "tags": [
+        "select_object",
+        "edit_delete"
+    ],
+    "author_time": 20.0
+}
