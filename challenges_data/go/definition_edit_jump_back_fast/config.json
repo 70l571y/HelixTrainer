@@ -1,0 +1,24 @@
+{
+  "id": "definition_edit_jump_back_fast",
+  "title": "Definition edit and fast jump back",
+  "description": "Перейдите к определению helperName, исправьте строку и быстро вернитесь к месту вызова через jumplist.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Поставьте курсор на helperName.\n2. Перейдите к определению через 'gd'.\n3. Исправьте строку 'Helxi helper' на 'Helix helper'.\n4. Вернитесь назад через 'Ctrl-o'.\n5. Сохраните оба файла.\nHelix-шпаргалка:\n- 'gd' прыгает к определению символа под курсором.\n- 'Ctrl-s' ставит jump, 'Ctrl-o' идёт назад, 'Ctrl-i' - вперёд по jumplist.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "lsp_definition",
+    "jumplist",
+    "edit_change"
+  ],
+  "author_time": 12.0
+}

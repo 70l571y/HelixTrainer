@@ -1,0 +1,26 @@
+{
+  "id": "picker_global_search_path_filter",
+  "title": "Global search path filter",
+  "description": "Найдите TODO только в worker.go через path filter в global search и исправьте совпадение, не трогая service.go.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "worker.go",
+    "service.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "worker.go": "goal_worker.go",
+    "service.go": "goal_service.go"
+  },
+  "tips": "1. Откройте global search.\n2. Используйте path filter вроде '%path worker.go' или аналог.\n3. Перейдите только к совпадению в worker.go.\n4. Исправьте TODO на DONE.\n5. Не меняйте service.go.\nHelix-шпаргалка:\n- '<space>f' открывает picker файлов; начните печатать имя и нажмите Enter.\n- '<space>/' открывает global search по workspace.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "search_global",
+    "picker_files",
+    "edit_change"
+  ],
+  "author_time": 20.0
+}

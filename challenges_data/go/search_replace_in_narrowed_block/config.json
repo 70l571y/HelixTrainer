@@ -1,0 +1,18 @@
+{
+  "id": "search_replace_in_narrowed_block",
+  "title": "Replace inside narrowed block",
+  "description": "Обновите только apiRoutes с '/v1/' на '/v2/', не меняя adminRoutes.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Сузьте выделение до блока apiRoutes.\n2. Выполните замену '/v1/' -> '/v2/' только внутри него.\n3. Не меняйте adminRoutes.\n4. Сохраните файл.\nHelix-шпаргалка:\n- Повторный 's' внутри уже созданных selection сужает цель правки.\n- '/' ищет вперёд, '?' назад, 'n'/'N' идут по совпадениям.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "search_subselect",
+    "search_basic",
+    "select_basic",
+    "edit_change"
+  ],
+  "author_time": 18.0
+}

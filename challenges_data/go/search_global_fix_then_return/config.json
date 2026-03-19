@@ -1,0 +1,24 @@
+{
+  "id": "search_global_fix_then_return",
+  "title": "Global search fix and return",
+  "description": "Найдите FIXME в helper.go через global search, исправьте его и вернитесь в основной файл через jumplist.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Откройте global search по FIXME.\n2. Перейдите в helper.go.\n3. Исправьте FIXME на fixed.\n4. Вернитесь в основной файл через jumplist.\n5. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>/' открывает global search по workspace.\n- 'Ctrl-s' ставит jump, 'Ctrl-o' идёт назад, 'Ctrl-i' - вперёд по jumplist.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "search_global",
+    "jumplist",
+    "edit_change"
+  ],
+  "author_time": 17.0
+}

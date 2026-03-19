@@ -1,0 +1,17 @@
+{
+  "id": "select_split_filter_transform",
+  "title": "Split filter and transform",
+  "description": "Разбейте список version=значение, оставьте только enabled строки и преобразуйте их к виду service:value.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите строки списка.\n2. Разбейте строки по '=' и сузьте выделения до нужных частей.\n3. Оставьте только enabled-сервисы.\n4. Преобразуйте результат к виду service:value.\n5. Удалите строки disabled.\nHelix-шпаргалка:\n- 'S' делит selection по regex-разделителю и даёт отдельные части.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'K' оставляет только совпавшие курсоры, 'Alt-K' удаляет совпавшие.",
+  "tags": [
+    "select_split_regex",
+    "filter",
+    "multicursor"
+  ],
+  "author_time": 19.0
+}

@@ -1,0 +1,17 @@
+{
+  "id": "hello_world",
+  "title": "Hello World Fix",
+  "description": "Исправьте оператор print, чтобы вывести 'Hello, World!'",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Подведите курсор к неверному символу в 'print'.\n2. Если нужно поменять один символ, нажмите 'r' и введите нужную букву.\n3. Если удобнее заменить слово целиком, выделите его и нажмите 'c'.\n4. Введите правильный текст и выйдите из insert mode через Esc.\nHelix-шпаргалка:\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.\n- 'h'/'j'/'k'/'l' - базовое перемещение по символам и строкам.\n- 'i', 'a', 'A', 'o', 'O' открывают разные варианты вставки.",
+  "tags": [
+    "edit_insert",
+    "edit_delete",
+    "movement_basic"
+  ],
+  "author_time": 12.14
+}

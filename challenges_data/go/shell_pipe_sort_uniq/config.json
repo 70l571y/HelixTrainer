@@ -1,0 +1,17 @@
+{
+  "id": "shell_pipe_sort_uniq",
+  "title": "Sort and uniq via shell",
+  "description": "Нормализуйте список тегов через shell pipe так, чтобы остались только уникальные отсортированные значения.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите строки списка.\n2. Запустите shell pipe через '|'.\n3. Используйте pipeline с sort и uniq.\n4. Верните чистый результат в буфер.\nHelix-шпаргалка:\n- '|' отправляет selection в shell command и возвращает результат в буфер.\n- Для shell transform сначала удобно сузить selection до нужных строк или колонок.\n- 'x' выделяет строку; счётчик работает как '3x' для трёх строк.",
+  "tags": [
+    "shell_pipe",
+    "shell_transform",
+    "select_line"
+  ],
+  "author_time": 16.0
+}

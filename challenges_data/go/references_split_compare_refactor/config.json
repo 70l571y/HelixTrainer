@@ -1,0 +1,27 @@
+{
+  "id": "references_split_compare_refactor",
+  "title": "References split compare refactor",
+  "description": "Найдите все ссылки на normalizeName, откройте один вызов в split и замените функцию на sanitizeName во всех местах.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go",
+    "handler.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go",
+    "handler.go": "goal_handler.go"
+  },
+  "tips": "1. Поставьте курсор на normalizeName.\n2. Откройте references и один из вызовов в split.\n3. Переименуйте вызовы и определение на sanitizeName.\n4. Проверьте все файлы и сохраните.\nHelix-шпаргалка:\n- 'gr' открывает references, а '<space>h' может выделить их сразу для общей правки.\n- 'Ctrl-w v' и 'Ctrl-w s' открывают вертикальный и горизонтальный split.\n- После split переходите между окнами через '<space>w' и затем 'h/j/k/l'.",
+  "tags": [
+    "lsp_references",
+    "window_split",
+    "window_move",
+    "edit_change"
+  ],
+  "author_time": 30.0
+}

@@ -1,0 +1,17 @@
+{
+  "id": "surround_cursor",
+  "title": "Окружение курсора",
+  "description": "Используйте mc для добавления курсоров на все строки с fmt.Println и измените их на log.Info.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите все строки с Println (s Println).\n2. Добавьте курсоры: 'mc'.\n3. Измените 'fmt.Println' на 'log.Info': 'cw' -> ввод -> Esc.\n4. Или используйте 's' для выделения и замены.\nHelix-шпаргалка:\n- 's' ищет regex внутри selection и создаёт курсоры на совпадениях.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "multicursor",
+    "select_regex",
+    "edit_change"
+  ],
+  "author_time": 18.0
+}

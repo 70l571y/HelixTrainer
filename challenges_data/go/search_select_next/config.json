@@ -1,0 +1,18 @@
+{
+  "id": "search_select_next",
+  "title": "Поиск в выделении",
+  "description": "Используйте * и v+n, чтобы выбрать оба вхождения bat и заменить их на cat.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите первое 'bat'.\n2. Нажмите '*'.\n3. Войдите в select mode: 'v'.\n4. Нажмите 'n' чтобы добавить следующее совпадение.\n5. 'c' -> 'cat' -> Esc.\nHelix-шпаргалка:\n- '*' берёт текущее выделение как шаблон для следующего поиска.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- После первого поиска двигайтесь по совпадениям через 'n' и 'N'.",
+  "tags": [
+    "search_selection",
+    "search_next",
+    "search_select_next",
+    "edit_change"
+  ],
+  "author_time": 14.0
+}

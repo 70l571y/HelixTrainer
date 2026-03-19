@@ -1,0 +1,17 @@
+{
+  "id": "search_reverse_pick",
+  "title": "Reverse search pick",
+  "description": "Найдите предыдущую draft-строку через обратный поиск и измените её на final.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор ближе к концу файла.\n2. Используйте '?' для поиска назад по 'draft'.\n3. Исправьте только первую draft-строку.\n4. Остальные строки не трогайте.\nHelix-шпаргалка:\n- '/' ищет вперёд, '?' назад, 'n'/'N' идут по совпадениям.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- После первого поиска двигайтесь по совпадениям через 'n' и 'N'.",
+  "tags": [
+    "search_basic",
+    "search_next",
+    "edit_change"
+  ],
+  "author_time": 12.0
+}

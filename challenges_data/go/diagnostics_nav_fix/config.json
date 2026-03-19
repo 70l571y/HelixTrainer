@@ -1,0 +1,17 @@
+{
+  "id": "diagnostics_nav_fix",
+  "title": "Навигация по диагностике",
+  "description": "Исправьте три ошибки в файле, переходя по ним через ]d и [d.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Перейдите к первой ошибке через ']d'.\n2. Исправьте имя символа.\n3. Повторяйте ']d' до следующей диагностики.\n4. При необходимости вернитесь через '[d'.\nHelix-шпаргалка:\n- ']d' идёт к следующей диагностике, '[d' - к предыдущей.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'gg', 'G', 'Ctrl-g' и 'gf' помогают быстро прыгать к цели.",
+  "tags": [
+    "diagnostics_nav",
+    "edit_change",
+    "movement_goto"
+  ],
+  "author_time": 12.0
+}

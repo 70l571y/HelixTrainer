@@ -1,0 +1,18 @@
+{
+  "id": "shell_sort",
+  "title": "Сортировка через shell",
+  "description": "Отсортируйте элементы слайса в алфавитном порядке используя shell pipe.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите элементы слайса (mi[ или x).\n2. Разделите выделение на строки: 'Alt-s'.\n3. Pipe в shell: '|' -> 'sort' -> Enter.\n4. Если нужно, используйте '| sort -u' для уникальных.\nHelix-шпаргалка:\n- 'Alt-s' делит выделение на отдельные строки или курсоры.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- '|' отправляет selection в shell command и возвращает результат в буфер.",
+  "tags": [
+    "shell_pipe",
+    "multicursor",
+    "select_split_lines",
+    "edit_change"
+  ],
+  "author_time": 15.0
+}

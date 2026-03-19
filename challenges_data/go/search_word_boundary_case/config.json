@@ -1,0 +1,17 @@
+{
+  "id": "search_word_boundary_case",
+  "title": "Word boundary search case",
+  "description": "Измените только отдельное слово mode на state, не трогая modeName и darkmode.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Найдите точное слово mode.\n2. Убедитесь, что совпадение не захватывает modeName и darkmode.\n3. Замените только отдельный token.\n4. Сохраните результат.\nHelix-шпаргалка:\n- '/' ищет вперёд, '?' назад, 'n'/'N' идут по совпадениям.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'w'/'b' идут по словам, 'W'/'B' - по WORD без учёта пунктуации.",
+  "tags": [
+    "search_basic",
+    "movement_word",
+    "edit_change"
+  ],
+  "author_time": 13.0
+}

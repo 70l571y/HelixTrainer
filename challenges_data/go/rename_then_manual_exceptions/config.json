@@ -1,0 +1,24 @@
+{
+  "id": "rename_then_manual_exceptions",
+  "title": "Rename then manual exceptions",
+  "description": "Переименуйте LoadUser в LoadAccount через rename, затем вручную исправьте строковый label, который должен остаться user-account.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go"
+  },
+  "tips": "1. Сделайте rename LoadUser -> LoadAccount через '<space>r'.\n2. Проверьте все изменённые места.\n3. Вручную поправьте строковый label на 'user-account'.\n4. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>r' запускает rename через LSP сразу по проекту.\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "lsp_rename",
+    "edit_change",
+    "buffer_switch"
+  ],
+  "author_time": 25.0
+}

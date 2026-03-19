@@ -1,0 +1,18 @@
+{
+  "id": "blackhole_preserve_primary",
+  "title": "Preserve primary yank with blackhole",
+  "description": "Переставьте keep и target, удалив noise через blackhole, чтобы не потерять нужную вставку.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Сначала сохраните 'target' в регистр.\n2. Удалите 'noise' через blackhole.\n3. Замените keep на target, не перезаписывая register.\n4. Убедитесь, что noise исчез.\nHelix-шпаргалка:\n- '_d' удаляет текст в blackhole, не затирая полезный yank/register.\n- '<reg>y' и '<reg>p' пишут в именованный регистр и вставляют из него.\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.",
+  "tags": [
+    "register_blackhole",
+    "register",
+    "edit_delete",
+    "edit_replace_yanked"
+  ],
+  "author_time": 15.0
+}

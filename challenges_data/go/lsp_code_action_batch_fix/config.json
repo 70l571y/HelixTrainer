@@ -1,0 +1,24 @@
+{
+  "id": "lsp_code_action_batch_fix",
+  "title": "Code action batch fix",
+  "description": "Исправьте import-диагностики в двух файлах, используя code actions там, где это уместно.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Поставьте курсор на diagnostic и нажмите '<space>a'.\n2. Добавьте недостающий import strings.\n3. Удалите неиспользуемый import time.\n4. Перейдите в helper.go и повторите шаги для strconv и bytes.\nHelix-шпаргалка:\n- '<space>a' показывает доступные code actions на текущей диагностике или строке.\n- ']d' идёт к следующей диагностике, '[d' - к предыдущей.\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.",
+  "tags": [
+    "lsp_code_action",
+    "diagnostics_nav",
+    "buffer_switch"
+  ],
+  "author_time": 20.0
+}

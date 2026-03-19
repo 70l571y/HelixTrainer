@@ -1,0 +1,18 @@
+{
+  "id": "window_split_current",
+  "title": "Разделение текущего буфера",
+  "description": "Разделите текущий буфер, чтобы держать верх и низ файла видимыми, и скопируйте releaseStage наверх.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Разделите текущий буфер: 'Ctrl-w v' или 'Ctrl-w s'.\n2. В одном окне оставьте верх файла, во втором перейдите к releaseStage.\n3. Скопируйте строку 'stable'.\n4. Вернитесь к верхней константе и вставьте её вместо 'draft'.\nHelix-шпаргалка:\n- 'Ctrl-w v' или 'Ctrl-w s' делят текущий буфер на два окна.\n- 'Ctrl-w v' и 'Ctrl-w s' открывают вертикальный и горизонтальный split.\n- После split переходите между окнами через '<space>w' и затем 'h/j/k/l'.",
+  "tags": [
+    "window_split_current",
+    "window_split",
+    "window_move",
+    "edit_yank_paste"
+  ],
+  "author_time": 20.0
+}

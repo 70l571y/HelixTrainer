@@ -1,0 +1,19 @@
+{
+  "id": "goto_file",
+  "title": "Переход к файлу",
+  "description": "Используйте 'gf' для перехода к файлу по пути и исправьте ошибку в нём.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "consts.go"
+  ],
+  "tips": "1. Найдите путь к файлу в коде (consts.go).\n2. Перейдите к файлу: 'gf'.\n3. Исправьте ошибку (неправильное значение).\n4. Вернитесь назад: 'Ctrl-o'.\n5. Сохраните изменения.\nHelix-шпаргалка:\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'gg', 'G', 'Ctrl-g' и 'gf' помогают быстро прыгать к цели.",
+  "tags": [
+    "movement_goto",
+    "edit_change"
+  ],
+  "author_time": 12.0
+}

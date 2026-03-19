@@ -1,0 +1,17 @@
+{
+  "id": "undo_redo_fixup",
+  "title": "Undo и redo",
+  "description": "Исправьте строку, используя u и U чтобы откатить и повторить промежуточную правку.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Исправьте 'servr' на 'server'.\n2. Нажмите 'u' и убедитесь, что правка откатилась.\n3. Нажмите 'U' чтобы вернуть её.\n4. Исправьте 'statred' на 'started'.\nHelix-шпаргалка:\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'u' откатывает правку, 'U' возвращает её обратно.\n- 'w'/'b' идут по словам, 'W'/'B' - по WORD без учёта пунктуации.",
+  "tags": [
+    "undo_redo",
+    "edit_change",
+    "movement_word"
+  ],
+  "author_time": 11.0
+}

@@ -1,0 +1,27 @@
+{
+  "id": "buffer_previous_next",
+  "title": "Previous and next buffer",
+  "description": "Откройте alpha.go и beta.go через hotkey-driven navigation и исправьте метки, переключаясь между буферами без command-line.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "alpha.go",
+    "beta.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "alpha.go": "goal_alpha.go",
+    "beta.go": "goal_beta.go"
+  },
+  "tips": "1. Откройте alpha.go и beta.go через '<space>f'.\n2. Переключайтесь между буферами через 'gn' и 'gp'.\n3. Исправьте 'alhpa' и 'btea'.\n4. Сохраните все буферы.\nHelix-шпаргалка:\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Через ':o file.go' можно открыть файл напрямую, если задача тренирует command mode.",
+  "tags": [
+    "buffer_switch",
+    "buffer_open",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 18.0
+}

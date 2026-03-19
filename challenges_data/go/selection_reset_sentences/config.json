@@ -1,0 +1,18 @@
+{
+  "id": "selection_reset_sentences",
+  "title": "Сброс выделений",
+  "description": "Сделайте первую букву каждого предложения заглавной через S, Alt-; и ;.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите обе строки: '2x'.\n2. Разделите по предложениям: 'S' -> '\\. |! ' -> Enter.\n3. 'Alt-;' чтобы развернуть выделения к первым буквам.\n4. ';' чтобы свернуть выделения до курсоров.\n5. 'Alt-`' чтобы сделать первые буквы заглавными.\nHelix-шпаргалка:\n- 'S' делит selection по regex-разделителю и даёт отдельные части.\n- ';' сворачивает selection, 'Alt-;' расширяет её обратно.\n- '~' переключает регистр, 'Alt-`' поднимает буквы в upper case.",
+  "tags": [
+    "select_line",
+    "select_split_regex",
+    "selection_reset",
+    "edit_case"
+  ],
+  "author_time": 17.0
+}

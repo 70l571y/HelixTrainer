@@ -1,0 +1,24 @@
+{
+  "id": "workspace_symbols_buffer_bounce",
+  "title": "Workspace symbols buffer bounce",
+  "description": "Откройте helper symbol через workspace symbols, исправьте его и вернитесь в основной буфер через history.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Найдите buildHelperBadge через workspace symbols.\n2. Исправьте строку в helper.go.\n3. Вернитесь в основной буфер через history.\n4. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>S' ищет символ по всему workspace.\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "picker_workspace_symbols",
+    "buffer_switch",
+    "edit_change"
+  ],
+  "author_time": 18.0
+}

@@ -1,0 +1,17 @@
+{
+  "id": "word_big_jump",
+  "title": "WORDS и числовые префиксы",
+  "description": "Удалите quoted-token и one-of-a-kind за минимальное число движений W и 2W.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор в начало строки.\n2. Используйте '2W' чтобы быстро дойти до 'quoted-token'.\n3. 'dW' чтобы удалить его.\n4. Вернитесь в начало и используйте 'W' для one-of-a-kind.\n5. Снова 'dW'.\nHelix-шпаргалка:\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.\n- 'w'/'b' идут по словам, 'W'/'B' - по WORD без учёта пунктуации.\n- Перед движением можно ставить счётчик: '2W', '3x', '4@a'.",
+  "tags": [
+    "movement_word",
+    "movement_count",
+    "edit_delete"
+  ],
+  "author_time": 14.0
+}

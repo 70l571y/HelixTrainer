@@ -1,0 +1,17 @@
+{
+  "id": "lsp_code_action_import",
+  "title": "Code action: add import",
+  "description": "Используйте code action, чтобы добавить недостающий импорт strings.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор на диагностике у 'strings.TrimSpace'.\n2. Нажмите '<space>a'.\n3. Выберите code action для добавления импорта strings.\n4. Проверьте, что файл стал валидным.\nHelix-шпаргалка:\n- '<space>a' показывает доступные code actions на текущей диагностике или строке.\n- ']d' идёт к следующей диагностике, '[d' - к предыдущей.",
+  "tags": [
+    "lsp_code_action",
+    "diagnostics_nav",
+    "track_core_hotkey"
+  ],
+  "author_time": 9.0
+}

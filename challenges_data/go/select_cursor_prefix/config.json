@@ -1,0 +1,18 @@
+{
+  "id": "select_cursor_prefix",
+  "title": "Вертикальные курсоры",
+  "description": "Используйте C, чтобы заменить префикс dev_ на prod_ в двух блоках.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор на 'd' в первой строке блока.\n2. Выделите 'dev' (например 'vll').\n3. Нажмите 'C' два раза, чтобы скопировать выделение вниз.\n4. 'c' -> введите 'prod' -> Esc.\n5. Повторите для второго блока.\nHelix-шпаргалка:\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'v' начинает selection, 'x' быстро выделяет строку целиком.",
+  "tags": [
+    "select_cursor",
+    "select_basic",
+    "edit_change",
+    "multicursor"
+  ],
+  "author_time": 16.0
+}

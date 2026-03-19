@@ -1,0 +1,17 @@
+{
+  "id": "shell_transform_codegen_cleanup",
+  "title": "Shell transform generated cleanup",
+  "description": "Нормализуйте список GENERATED_* строк через shell transform и приведите его к чистому lowercase виду.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите блок строк.\n2. Прогоните его через shell transform.\n3. Уберите префикс GENERATED_ и приведите всё к lowercase.\n4. Верните результат в буфер.\nHelix-шпаргалка:\n- '|' отправляет selection в shell command и возвращает результат в буфер.\n- Для shell transform сначала удобно сузить selection до нужных строк или колонок.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "shell_transform",
+    "shell_pipe",
+    "edit_change"
+  ],
+  "author_time": 19.0
+}

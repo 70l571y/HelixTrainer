@@ -1,0 +1,17 @@
+{
+  "id": "lsp_code_action_remove_import",
+  "title": "Code action: remove import",
+  "description": "Используйте code action, чтобы удалить неиспользуемый импорт strings.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор на диагностике у импорта strings.\n2. Нажмите '<space>a'.\n3. Выберите code action для удаления неиспользуемого импорта.\n4. Проверьте, что файл снова чистый.\nHelix-шпаргалка:\n- '<space>a' показывает доступные code actions на текущей диагностике или строке.\n- ']d' идёт к следующей диагностике, '[d' - к предыдущей.",
+  "tags": [
+    "lsp_code_action",
+    "diagnostics_nav",
+    "track_core_hotkey"
+  ],
+  "author_time": 8.0
+}

@@ -1,0 +1,25 @@
+{
+  "id": "window_close_current",
+  "title": "Close current window",
+  "description": "Откройте draft.go в split, исправьте строку и закройте только текущее окно, оставшись в основном буфере.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "draft.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "draft.go": "goal_draft.go"
+  },
+  "tips": "1. Откройте draft.go в split.\n2. Исправьте строку в draft.go.\n3. Закройте только текущее окно через window close.\n4. Убедитесь, что основной буфер остался открыт.\n5. Сохраните файлы.\nHelix-шпаргалка:\n- 'Ctrl-w v' и 'Ctrl-w s' открывают вертикальный и горизонтальный split.\n- После split переходите между окнами через '<space>w' и затем 'h/j/k/l'.\n- 'Ctrl-w q' закрывает текущее окно, 'Ctrl-w o' оставляет только текущее.",
+  "tags": [
+    "window_split",
+    "window_close",
+    "window_move",
+    "edit_change"
+  ],
+  "author_time": 15.0
+}

@@ -1,0 +1,16 @@
+{
+  "id": "edit_case_toggle",
+  "title": "Смена регистра",
+  "description": "Приведите имя константы 'maxRetries' к верхнему регистру.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите все строки, например с x.\n2. Нажмите '~' для смены регистра (или Alt-` для верхнего).\nHelix-шпаргалка:\n- '~' переключает регистр, 'Alt-`' поднимает буквы в upper case.\n- 'v' начинает selection, 'x' быстро выделяет строку целиком.",
+  "tags": [
+    "edit_case",
+    "select_basic"
+  ],
+  "author_time": 5.5
+}

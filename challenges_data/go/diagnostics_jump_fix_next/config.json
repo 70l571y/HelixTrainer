@@ -1,0 +1,16 @@
+{
+  "id": "diagnostics_jump_fix_next",
+  "title": "Diagnostics jump and fix",
+  "description": "Исправьте три ошибки в одном файле, переходя между diagnostics через ]d и [d.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Перейдите к первой ошибке через ']d'.\n2. Исправьте имя функции или вызова.\n3. Двигайтесь к следующей диагностике, не скролля вручную.\n4. Для проверки маршрута используйте и обратный переход '[d'.\n5. Уберите все три ошибки.\nHelix-шпаргалка:\n- ']d' идёт к следующей диагностике, '[d' - к предыдущей.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "diagnostics_nav",
+    "edit_change"
+  ],
+  "author_time": 11.0
+}

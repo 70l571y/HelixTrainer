@@ -1,0 +1,17 @@
+{
+  "id": "select_tree_object_function",
+  "title": "Tree-sitter textobject",
+  "description": "Используйте mif или maf, чтобы быстро заменить тело helperBody новым return.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор внутрь helperBody.\n2. Используйте 'mif' или 'maf' для выбора функции или её содержимого.\n3. Удалите старое тело.\n4. Вставьте новый короткий return.\nHelix-шпаргалка:\n- Для кода удобнее tree-sitter text objects вроде 'mif', 'maf', 'mip'.\n- 'mi...' и 'ma...' выбирают объект изнутри или вместе с обёрткой.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "select_object",
+    "select_tree_object",
+    "edit_change"
+  ],
+  "author_time": 14.0
+}

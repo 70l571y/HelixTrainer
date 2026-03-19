@@ -1,0 +1,17 @@
+{
+  "id": "movement_find_fields",
+  "title": "Поиск символа по строке",
+  "description": "Удалите среднее поле из каждой CSV-строки, используя f/t для навигации.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Перейдите внутрь первой строки.\n2. 'f,' -> к первой запятой.\n3. 'vt,' -> выделите среднее поле до следующей запятой.\n4. 'd' -> удалите.\n5. Повторите для остальных строк.\nHelix-шпаргалка:\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.\n- 'f<char>' и 't<char>' прыгают по строке; 'Alt-.' повторяет find.\n- 'v' начинает selection, 'x' быстро выделяет строку целиком.",
+  "tags": [
+    "movement_find",
+    "select_basic",
+    "edit_delete"
+  ],
+  "author_time": 12.0
+}

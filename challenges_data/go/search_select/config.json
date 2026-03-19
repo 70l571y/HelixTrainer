@@ -1,0 +1,18 @@
+{
+  "id": "search_select",
+  "title": "Поиск и выделение",
+  "description": "Измените все 'foo' на 'bar' используя выделение поиском.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "Поиск и выделение:\n1. Поиск: '/' -> 'foo' -> Enter.\n2. Режим выделения: 'v'.\n3. Выделить следующие совпадения: 'n' (добавляет к выделению).\n4. Повторяйте 'n' пока все не будут выделены.\n5. Изменить: 'c' -> 'bar' -> Esc.\nHelix-шпаргалка:\n- '/' ищет вперёд, '?' назад, 'n'/'N' идут по совпадениям.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "search_basic",
+    "search_next",
+    "edit_change",
+    "multicursor"
+  ],
+  "author_time": 10.09
+}

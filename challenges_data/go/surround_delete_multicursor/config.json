@@ -1,0 +1,16 @@
+{
+  "id": "surround_delete_multicursor",
+  "title": "Удаление кавычек",
+  "description": "Удалите кавычки у всех элементов.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите все элементы (например 'mi[' -> 's' -> string regex).\n2. 'md\"' (match delete \").\nHelix-шпаргалка:\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'md<char>' удаляет выбранный surround без ручного удаления скобок.",
+  "tags": [
+    "surround_delete",
+    "multicursor"
+  ],
+  "author_time": 7.55
+}

@@ -1,0 +1,28 @@
+{
+  "id": "crossfile_jump_memory_loop",
+  "title": "Crossfile jump memory loop",
+  "description": "Пройдите цепочку definition -> references -> diagnostics и вернитесь в исходный буфер, исправив ошибки в трёх файлах.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go",
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Поставьте курсор на buildLabel и перейдите к определению.\n2. Исправьте helper в helper.go.\n3. Откройте references и обновите вызов в service.go.\n4. Вернитесь в challenge.go и исправьте оставшуюся диагностику.\n5. Завершите в исходном буфере и сохраните все файлы.\nHelix-шпаргалка:\n- 'gr' открывает references, а '<space>h' может выделить их сразу для общей правки.\n- 'gd' прыгает к определению символа под курсором.\n- '<space>d' открывает diagnostics текущего файла, '<space>D' - по всему workspace.",
+  "tags": [
+    "lsp_definition",
+    "lsp_references",
+    "picker_diagnostics",
+    "buffer_switch",
+    "jumplist"
+  ],
+  "author_time": 31.0
+}

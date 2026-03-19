@@ -1,0 +1,17 @@
+{
+  "id": "lsp_references_local",
+  "title": "Ссылки на символ",
+  "description": "Выберите все ссылки на userID через LSP и переименуйте его в accountID.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор на 'userID'.\n2. Нажмите '<space>h' для выбора всех ссылок на символ.\n3. Нажмите 'c' и введите 'accountID'.\n4. Проверьте, что изменились объявление и все использования.\nHelix-шпаргалка:\n- 'gr' открывает references, а '<space>h' может выделить их сразу для общей правки.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "lsp_references",
+    "edit_change",
+    "multicursor"
+  ],
+  "author_time": 13.0
+}

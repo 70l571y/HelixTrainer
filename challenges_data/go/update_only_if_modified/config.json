@@ -1,0 +1,18 @@
+{
+  "id": "update_only_if_modified",
+  "title": "Update only if modified",
+  "description": "Исправьте строку cache label и сохраните файл через ':update'.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Исправьте строку на 'Helix cache'.\n2. Сохраните файл через ':update'.\n3. Завершите через ':wq'.\nHelix-шпаргалка:\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- ':' открывает command mode; удобно для ':o', ':write', ':update', ':wq'.\n- ':w', ':write path', ':update' и ':wq' закрывают сценарий через command mode.",
+  "tags": [
+    "command_mode",
+    "file_save",
+    "edit_change",
+    "track_optional_command_line"
+  ],
+  "author_time": 8.0
+}

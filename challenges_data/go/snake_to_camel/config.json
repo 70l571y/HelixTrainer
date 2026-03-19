@@ -1,0 +1,17 @@
+{
+  "id": "snake_to_camel",
+  "title": "Snake Case в Camel Case",
+  "description": "Преобразуйте все ключи словаря из snake_case в camelCase, оставляя имя переменной без изменений.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите словарь (например 'vip').\n2. Выделите только ключи: s\"\\w+\":<enter>\n3. Выделите подчёркивания внутри ключей: s_<enter>\n4. Удалите подчёркивания: d\n5. Смените регистр: ~\nHelix-шпаргалка:\n- 's' ищет regex внутри selection и создаёт курсоры на совпадениях.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- '~' переключает регистр, 'Alt-`' поднимает буквы в upper case.",
+  "tags": [
+    "edit_case",
+    "select_regex",
+    "multicursor"
+  ],
+  "author_time": 29.54
+}

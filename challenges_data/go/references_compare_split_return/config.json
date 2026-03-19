@@ -1,0 +1,28 @@
+{
+  "id": "references_compare_split_return",
+  "title": "References compare split return",
+  "description": "Откройте references normalizeName, сверяйтесь с одним вызовом в split и переименуйте функцию и оба вызова в sanitizeName.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go",
+    "handler.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go",
+    "handler.go": "goal_handler.go"
+  },
+  "tips": "1. Поставьте курсор на normalizeName.\n2. Откройте references и один вызов в split.\n3. Переименуйте определение и оба вызова на sanitizeName.\n4. Закройте временное окно и завершите обход ссылок.\n5. Сохраните все файлы.\nHelix-шпаргалка:\n- 'gr' открывает references, а '<space>h' может выделить их сразу для общей правки.\n- 'Ctrl-w v' и 'Ctrl-w s' открывают вертикальный и горизонтальный split.\n- 'Ctrl-w q' закрывает текущее окно, 'Ctrl-w o' оставляет только текущее.",
+  "tags": [
+    "lsp_references",
+    "window_split",
+    "window_close",
+    "buffer_switch",
+    "edit_change"
+  ],
+  "author_time": 30.0
+}

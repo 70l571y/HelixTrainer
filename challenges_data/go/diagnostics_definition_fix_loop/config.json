@@ -1,0 +1,25 @@
+{
+  "id": "diagnostics_definition_fix_loop",
+  "title": "Diagnostics definition fix loop",
+  "description": "Пройдите по diagnostics, перейдите к определению helperLable, исправьте его и затем уберите оставшуюся ошибку в основном файле.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Начните с diagnostics navigation.\n2. На вызове helperLable перейдите к определению через 'gd'.\n3. Исправьте helperLable на helperLabel в helper.go.\n4. Вернитесь назад и уберите вторую ошибку в challenge.go.\n5. Сохраните оба файла.\nHelix-шпаргалка:\n- 'gd' прыгает к определению символа под курсором.\n- ']d' идёт к следующей диагностике, '[d' - к предыдущей.\n- 'Ctrl-s' ставит jump, 'Ctrl-o' идёт назад, 'Ctrl-i' - вперёд по jumplist.",
+  "tags": [
+    "diagnostics_nav",
+    "lsp_definition",
+    "jumplist",
+    "edit_change"
+  ],
+  "author_time": 24.0
+}

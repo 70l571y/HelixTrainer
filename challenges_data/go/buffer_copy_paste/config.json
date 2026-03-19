@@ -1,0 +1,22 @@
+{
+  "id": "buffer_copy_paste",
+  "title": "Управление буфером",
+  "description": "Скопируйте код из нескольких файлов в текущий файл используя команды буфера.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "parser_utils.go",
+    "config_loader.go"
+  ],
+  "tips": "1. Открыть файл: ':o parser_utils.go'.\n2. Выделить функцию: Используйте 'map' или 'maf' для выделения параграфа.\n3. Копировать: 'y'.\n4. перейти к предыдущему буферу: ':previous-buffer'.\n5. Вставить: 'p'.\n6. Повторить для config_loader.go.\nHelix-шпаргалка:\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- 'y' копирует, 'p' вставляет после курсора или selection.\n- Через ':o file.go' можно открыть файл напрямую, если задача тренирует command mode.",
+  "tags": [
+    "buffer_open",
+    "buffer_switch",
+    "edit_yank_paste",
+    "track_optional_command_line"
+  ],
+  "author_time": 26.0
+}

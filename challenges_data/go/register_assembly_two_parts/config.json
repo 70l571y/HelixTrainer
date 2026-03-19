@@ -1,0 +1,16 @@
+{
+  "id": "register_assembly_two_parts",
+  "title": "Assemble from two registers",
+  "description": "Соберите строку core::worker из двух независимых фрагментов через registers.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Сохраните 'core' и '::worker' в отдельные регистры.\n2. Соберите итог в result.\n3. Не набирайте всю строку вручную.\n4. Сохраните файл.\nHelix-шпаргалка:\n- '<reg>y' и '<reg>p' пишут в именованный регистр и вставляют из него.\n- 'y' копирует, 'p' вставляет после курсора или selection.",
+  "tags": [
+    "register",
+    "edit_yank_paste"
+  ],
+  "author_time": 16.0
+}

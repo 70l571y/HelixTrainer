@@ -1,0 +1,18 @@
+{
+  "id": "rename_variable_simple",
+  "title": "Переименование переменных (простое)",
+  "description": "Переименуйте 'userScoreHistory' в 'scores' и 'calculatedAverageValue' в 'average'.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите блок функции.\n2. Используйте 's userScore' для первого имени.\n3. Нажмите 'c' и введите 'scores'.\n4. Повторите для calculatedAverageValue -> average.\nHelix-шпаргалка:\n- '*' берёт текущее выделение как шаблон для следующего поиска.\n- 's' ищет regex внутри selection и создаёт курсоры на совпадениях.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.",
+  "tags": [
+    "select_regex",
+    "edit_change",
+    "search_selection",
+    "multicursor"
+  ],
+  "author_time": 24.71
+}

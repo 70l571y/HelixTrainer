@@ -1,0 +1,23 @@
+{
+  "id": "lsp_rename_service",
+  "title": "LSP rename",
+  "description": "Переименуйте LoadUser в LoadAccount сразу во всех файлах через LSP rename.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go"
+  },
+  "tips": "1. Поставьте курсор на 'LoadUser' в вызове или определении.\n2. Нажмите '<space>r'.\n3. Введите 'LoadAccount' и подтвердите rename.\n4. Убедитесь, что изменились и вызовы, и определение.\nHelix-шпаргалка:\n- '<space>r' запускает rename через LSP сразу по проекту.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "lsp_rename",
+    "edit_change"
+  ],
+  "author_time": 16.0
+}

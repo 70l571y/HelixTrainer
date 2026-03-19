@@ -1,0 +1,17 @@
+{
+  "id": "search_selection_local_replace",
+  "title": "Search selection and local replace",
+  "description": "Выберите слово draft, найдите его вхождения через search-selection и замените только два нужных случая на final.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите draft и используйте '*'.\n2. Добавьте только нужные совпадения.\n3. Замените их на final.\n4. Не меняйте draft_note.\nHelix-шпаргалка:\n- '*' берёт текущее выделение как шаблон для следующего поиска.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- После поиска можно добавлять совпадения в selection через 'n'.",
+  "tags": [
+    "search_selection",
+    "search_select_next",
+    "edit_change"
+  ],
+  "author_time": 14.0
+}

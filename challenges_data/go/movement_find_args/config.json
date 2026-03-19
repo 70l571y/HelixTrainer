@@ -1,0 +1,19 @@
+{
+  "id": "movement_find_args",
+  "title": "Обрезка аргументов",
+  "description": "Удалите последние 2 аргумента (cache, timeout) из определения и всех вызовов.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. 'gw' -> введите метку для 'cache'.\n2. 'b' -> перейдите к запятой.\n3. 'vt)' -> выделите до закрывающей скобки.\n4. 'd' -> удалите.\nHelix-шпаргалка:\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.\n- 'f<char>' и 't<char>' прыгают по строке; 'Alt-.' повторяет find.\n- 'w'/'b' идут по словам, 'W'/'B' - по WORD без учёта пунктуации.",
+  "tags": [
+    "movement_find",
+    "movement_goto",
+    "movement_word",
+    "edit_delete",
+    "select_basic"
+  ],
+  "author_time": 26.22
+}

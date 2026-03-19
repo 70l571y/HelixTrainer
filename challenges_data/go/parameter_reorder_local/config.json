@@ -1,0 +1,17 @@
+{
+  "id": "parameter_reorder_local",
+  "title": "Reorder parameters locally",
+  "description": "Поменяйте порядок параметров buildTask на retries, timeout и обновите локальные вызовы.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Начните с сигнатуры buildTask.\n2. Переставьте timeout и retries через parameter textobject.\n3. Обновите оба вызова ниже.\n4. Сохраните файл.\nHelix-шпаргалка:\n- Для параметров используйте 'mip' или 'map', чтобы брать аргумент целиком.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'y' копирует, 'p' вставляет после курсора или selection.",
+  "tags": [
+    "select_tree_parameter",
+    "edit_yank_paste",
+    "edit_change"
+  ],
+  "author_time": 19.0
+}

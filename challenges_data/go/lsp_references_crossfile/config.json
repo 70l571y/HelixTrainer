@@ -1,0 +1,24 @@
+{
+  "id": "lsp_references_crossfile",
+  "title": "Ссылки на символ между файлами",
+  "description": "Выберите все ссылки на sessionID через LSP и переименуйте его в requestID в двух файлах.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "audit.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "audit.go": "goal_audit.go"
+  },
+  "tips": "1. Поставьте курсор на 'sessionID'.\n2. Нажмите '<space>h' для выбора всех ссылок на символ.\n3. Замените имя на 'requestID'.\n4. Проверьте оба файла перед сохранением.\nHelix-шпаргалка:\n- 'gr' открывает references, а '<space>h' может выделить их сразу для общей правки.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "lsp_references",
+    "multicursor",
+    "edit_change"
+  ],
+  "author_time": 16.0
+}

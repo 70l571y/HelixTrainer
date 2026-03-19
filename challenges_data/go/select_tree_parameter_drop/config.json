@@ -1,0 +1,17 @@
+{
+  "id": "select_tree_parameter_drop",
+  "title": "Tree parameter textobject",
+  "description": "Удалите параметр timeout из сигнатуры и всех вызовов через parameter textobject.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор на параметр timeout.\n2. Используйте 'map' или 'mip' чтобы выбрать параметр вместе с разделителем.\n3. Удалите его из сигнатуры.\n4. Повторите приёмы на всех вызовах функции.\nHelix-шпаргалка:\n- Для параметров используйте 'mip' или 'map', чтобы брать аргумент целиком.\n- Для кода удобнее tree-sitter text objects вроде 'mif', 'maf', 'mip'.\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.",
+  "tags": [
+    "select_tree_parameter",
+    "select_tree_object",
+    "edit_delete"
+  ],
+  "author_time": 22.0
+}

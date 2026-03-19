@@ -1,0 +1,17 @@
+{
+  "id": "format_selection_block",
+  "title": "Форматирование выделения",
+  "description": "Отформатируйте только тело функции helper через '=' на выделении.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "exact",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите только тело helper, не захватывая соседние функции.\n2. Нажмите '=' для форматирования выделения.\n3. Проверьте, что остальная часть файла осталась без изменений.\nHelix-шпаргалка:\n- 'Alt-o' расширяет selection по синтаксическому дереву.\n- Сначала выделите нужный блок, затем нажмите '=' только для него.\n- '=' форматирует selection, а при отсутствии selection - весь буфер.",
+  "tags": [
+    "format_selection",
+    "format_buffer",
+    "select_syntax"
+  ],
+  "author_time": 10.0
+}

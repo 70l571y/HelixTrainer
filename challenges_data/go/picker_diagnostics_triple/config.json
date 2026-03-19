@@ -1,0 +1,26 @@
+{
+  "id": "picker_diagnostics_triple",
+  "title": "Workspace diagnostics на трёх файлах",
+  "description": "Используйте workspace diagnostics picker, чтобы последовательно исправить ошибки в трёх файлах.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "report.go",
+    "summary.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "report.go": "goal_report.go",
+    "summary.go": "goal_summary.go"
+  },
+  "tips": "1. Откройте workspace diagnostics picker: '<space>D'.\n2. Перейдите к первой ошибке и исправьте её.\n3. Повторяйте picker, пока не почините report.go и summary.go.\n4. Сохраняйте файлы после каждой правки, чтобы список диагностик сокращался.\nHelix-шпаргалка:\n- ']d' идёт к следующей диагностике, '[d' - к предыдущей.\n- '<space>d' открывает diagnostics текущего файла, '<space>D' - по всему workspace.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "picker_diagnostics",
+    "diagnostics_nav",
+    "edit_change"
+  ],
+  "author_time": 24.0
+}

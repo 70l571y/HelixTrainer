@@ -1,0 +1,17 @@
+{
+  "id": "surround_delete_quotes",
+  "title": "Удаление кавычек",
+  "description": "Преобразуйте слайс строк в слайс целых чисел.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Перейдите внутрь скобок.\n2. Нажмите 'mi[' для выделения содержимого.\n3. Нажмите 's\"' для выделения всех кавычек.\n4. Нажмите 'd' для удаления.\nHelix-шпаргалка:\n- 'mi...' и 'ma...' выбирают объект изнутри или вместе с обёрткой.\n- 's' ищет regex внутри selection и создаёт курсоры на совпадениях.\n- 'md<char>' удаляет выбранный surround без ручного удаления скобок.",
+  "tags": [
+    "surround_delete",
+    "select_object",
+    "select_regex"
+  ],
+  "author_time": 10.29
+}

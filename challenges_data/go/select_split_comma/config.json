@@ -1,0 +1,15 @@
+{
+  "id": "select_split_comma",
+  "title": "Разделение по запятой",
+  "description": "Поместите каждый элемент на новую строку.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите содержимое слайса.\n2. 'S' -> ',\\s*' -> Enter.\n3. Каждое значение станет отдельным выделением на своей строке.\nHelix-шпаргалка:\n- 'S' делит selection по regex-разделителю и даёт отдельные части.",
+  "tags": [
+    "select_split_regex"
+  ],
+  "author_time": 6.78
+}

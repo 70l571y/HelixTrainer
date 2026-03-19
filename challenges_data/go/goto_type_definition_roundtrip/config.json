@@ -1,0 +1,26 @@
+{
+  "id": "goto_type_definition_roundtrip",
+  "title": "Goto type definition roundtrip",
+  "description": "Перейдите к type definition formatter, переименуйте concrete type upperFormatter в bannerFormatter и обновите использование.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "formatter.go",
+    "formatter_impl.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "formatter.go": "goal_formatter.go",
+    "formatter_impl.go": "goal_formatter_impl.go"
+  },
+  "tips": "1. Поставьте курсор на formatter.\n2. Перейдите к type definition через gy.\n3. Переименуйте upperFormatter в bannerFormatter.\n4. Обновите использование concrete type.\n5. Сохраните все файлы.\nHelix-шпаргалка:\n- 'gy' открывает type definition для выбранного символа.\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "lsp_type_definition",
+    "buffer_switch",
+    "edit_change"
+  ],
+  "author_time": 20.0
+}

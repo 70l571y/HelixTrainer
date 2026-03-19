@@ -1,0 +1,17 @@
+{
+  "id": "selection_rotate_values",
+  "title": "Циклическая замена выделений",
+  "description": "Поменяйте местами слова through, water и know через Alt-( и Alt-).",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите обе строки: '2x'.\n2. Нажмите 's' и введите 'through|water|know'.\n3. Используйте 'Alt-(' или 'Alt-)' чтобы циклически сдвинуть содержимое.\n4. Остановитесь, когда строки совпадут с goal.\nHelix-шпаргалка:\n- 's' ищет regex внутри selection и создаёт курсоры на совпадениях.\n- 'Alt-(' и 'Alt-)' циклически меняют содержимое selection местами.\n- 'x' выделяет строку; счётчик работает как '3x' для трёх строк.",
+  "tags": [
+    "selection_rotate_contents",
+    "select_line",
+    "select_regex"
+  ],
+  "author_time": 14.0
+}

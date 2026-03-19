@@ -1,0 +1,26 @@
+{
+  "id": "buffer_open_command_cycle",
+  "title": "Open buffer and cycle back",
+  "description": "Откройте extra.go через :o, исправьте строку и вернитесь в основной буфер через buffer history.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "extra.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "extra.go": "goal_extra.go"
+  },
+  "tips": "1. Откройте extra.go через ':o extra.go'.\n2. Исправьте строку в extra.go.\n3. Вернитесь в основной буфер через previous buffer.\n4. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- ':' открывает command mode; удобно для ':o', ':write', ':update', ':wq'.",
+  "tags": [
+    "command_mode",
+    "buffer_open",
+    "buffer_switch",
+    "edit_change",
+    "track_optional_command_line"
+  ],
+  "author_time": 16.0
+}

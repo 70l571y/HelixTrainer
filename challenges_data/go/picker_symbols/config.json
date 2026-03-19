@@ -1,0 +1,17 @@
+{
+  "id": "picker_symbols",
+  "title": "Навигация по символам",
+  "description": "Используйте picker символов для быстрого перехода к функциям и измените их имена.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Откройте picker символов: '<space>' -> 's'.\n2. Начните вводить имя функции (например 'process').\n3. Выберите функцию из списка.\n4. Измените имя: 'cw' -> новое имя -> Esc.\n5. Повторите для других функций.\nHelix-шпаргалка:\n- '<space>s' открывает symbols picker текущего файла.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'gg', 'G', 'Ctrl-g' и 'gf' помогают быстро прыгать к цели.",
+  "tags": [
+    "picker_symbols",
+    "movement_goto",
+    "edit_change"
+  ],
+  "author_time": 15.0
+}

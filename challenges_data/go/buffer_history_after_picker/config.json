@@ -1,0 +1,24 @@
+{
+  "id": "buffer_history_after_picker",
+  "title": "Buffer history after picker",
+  "description": "Откройте helper.go через file picker, исправьте значение и вернитесь в исходный буфер через history.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Откройте helper.go через file picker.\n2. Исправьте helperValue.\n3. Вернитесь в исходный буфер через history буферов.\n4. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>f' открывает picker файлов; начните печатать имя и нажмите Enter.\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "picker_files",
+    "buffer_switch",
+    "edit_change"
+  ],
+  "author_time": 17.0
+}

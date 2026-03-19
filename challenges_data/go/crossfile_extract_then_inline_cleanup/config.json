@@ -1,0 +1,27 @@
+{
+  "id": "crossfile_extract_then_inline_cleanup",
+  "title": "Cross-file extract and cleanup",
+  "description": "Вынесите commonLabel в helper.go, затем обновите вызовы в двух файлах и зачистите старые локальные версии.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go",
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Перенесите общую функцию в helper.go.\n2. Обновите вызовы в challenge.go и service.go.\n3. Удалите старые локальные копии.\n4. Приведите файлы к чистому виду и сохраните их.\nHelix-шпаргалка:\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- '=' форматирует selection, а при отсутствии selection - весь буфер.\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.",
+  "tags": [
+    "buffer_switch",
+    "format_buffer",
+    "edit_yank_paste",
+    "edit_delete"
+  ],
+  "author_time": 31.0
+}

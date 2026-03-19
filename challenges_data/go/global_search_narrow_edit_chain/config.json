@@ -1,0 +1,27 @@
+{
+  "id": "global_search_narrow_edit_chain",
+  "title": "Global search narrow edit chain",
+  "description": "Найдите legacyWrap по workspace, перейдите к каждому результату и локально замените вызовы на modernWrap.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go",
+    "worker.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go",
+    "worker.go": "goal_worker.go"
+  },
+  "tips": "1. Откройте global search по legacyWrap.\n2. Перейдите к каждому совпадению.\n3. Локально сузьте правку до нужного вызова и замените legacyWrap на modernWrap.\n4. Вернитесь и перейдите к следующему результату.\n5. Сохраните все файлы.\nHelix-шпаргалка:\n- '<space>/' открывает global search по workspace.\n- Повторный 's' внутри уже созданных selection сужает цель правки.\n- 'Ctrl-s' ставит jump, 'Ctrl-o' идёт назад, 'Ctrl-i' - вперёд по jumplist.",
+  "tags": [
+    "search_global",
+    "search_subselect",
+    "jumplist",
+    "edit_change"
+  ],
+  "author_time": 28.0
+}

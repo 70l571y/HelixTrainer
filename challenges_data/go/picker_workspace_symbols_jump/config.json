@@ -1,0 +1,24 @@
+{
+  "id": "picker_workspace_symbols_jump",
+  "title": "Workspace symbols",
+  "description": "Откройте workspace symbol picker и перейдите к buildSummary в другом файле, затем измените заголовок.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "report_builder.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "report_builder.go": "goal_report_builder.go"
+  },
+  "tips": "1. Откройте workspace symbol picker: '<space>S'.\n2. Введите 'buildSummary' и перейдите к символу.\n3. Измените возвращаемый заголовок с 'Weekly summary' на 'Monthly summary'.\n4. Сохраните файл и вернитесь обратно.\nHelix-шпаргалка:\n- '<space>S' ищет символ по всему workspace.\n- '<space>s' открывает symbols picker текущего файла.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.",
+  "tags": [
+    "picker_workspace_symbols",
+    "picker_symbols",
+    "edit_change"
+  ],
+  "author_time": 17.0
+}
