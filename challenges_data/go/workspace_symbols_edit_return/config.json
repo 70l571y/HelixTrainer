@@ -1,0 +1,24 @@
+{
+  "id": "workspace_symbols_edit_return",
+  "title": "Workspace symbols and return",
+  "description": "Найдите symbol buildBadge через workspace symbols, исправьте строку и вернитесь в основной файл.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "badge.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "badge.go": "goal_badge.go"
+  },
+  "tips": "1. Откройте workspace symbols через '<space>S'.\n2. Найдите buildBadge и перейдите к symbol.\n3. Исправьте 'Helxi' на 'Helix'.\n4. Вернитесь в основной файл через jumplist.\n5. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>S' ищет символ по всему workspace.\n- 'Ctrl-s' ставит jump, 'Ctrl-o' идёт назад, 'Ctrl-i' - вперёд по jumplist.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Самый короткий путь здесь: Откройте workspace symbols через '<space>S' -> Найдите buildBadge и перейдите к symbol -> Исправьте 'Helxi' на 'Helix' -> Вернитесь в основной файл через jumplist.",
+  "tags": [
+    "picker_workspace_symbols",
+    "jumplist",
+    "edit_change"
+  ],
+  "author_time": 16.0
+}

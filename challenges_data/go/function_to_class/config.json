@@ -1,0 +1,21 @@
+{
+  "id": "function_to_class",
+  "title": "Функции в методы",
+  "description": "Преобразуйте 3 отдельные функции в методы типа Calculator и упростите тела функций.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Переименуйте calculate* в get* сразу во всех сигнатурах.\n2. Добавьте тип 'Calculator' перед каждым методом.\n3. Упростите тела функций до прямого return.\n4. Добавьте объявление 'type Calculator struct{}'.\n5. При необходимости выделяйте строки и сдвигайте блоки через 'x' и '>'.\nHelix-шпаргалка:\n- 's' ищет regex внутри selection и создаёт курсоры на совпадениях.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- '>' и '<' двигают отступ, '=' форматирует по formatter/LSP.\n- Самый короткий путь здесь: Переименуйте calculate* в get* сразу во всех сигнатурах -> Добавьте тип 'Calculator' перед каждым методом -> Упростите тела функций до прямого return -> Добавьте объявление 'type Calculator struct{}'.",
+  "tags": [
+    "edit_change",
+    "select_regex",
+    "edit_insert",
+    "multicursor",
+    "select_line",
+    "edit_delete",
+    "edit_indent"
+  ],
+  "author_time": 41.88
+}

@@ -1,0 +1,24 @@
+{
+  "id": "picker_diagnostics_roundtrip",
+  "title": "Diagnostics roundtrip",
+  "description": "Откройте diagnostics picker, исправьте ошибку в challenge.go и затем во втором файле report.go.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "report.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "report.go": "goal_report.go"
+  },
+  "tips": "1. Откройте diagnostics picker через '<space>D' и исправьте вызов в challenge.go.\n2. Снова вызовите picker и перейдите к ошибке в report.go.\n3. Исправьте вторую опечатку и сохраните оба файла.\nHelix-шпаргалка:\n- '<space>D' быстрее всего показывает все diagnostics workspace в одном списке.\n- ']d' и '[d' удобны, если после первого перехода хотите листать ошибки без повторного открытия picker.\n- Самый короткий путь здесь: '<space>D' -> Enter -> правка -> '<space>D' -> Enter -> правка.",
+  "tags": [
+    "picker_diagnostics",
+    "diagnostics_nav",
+    "edit_change"
+  ],
+  "author_time": 14.0
+}

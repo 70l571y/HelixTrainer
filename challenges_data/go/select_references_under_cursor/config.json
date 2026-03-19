@@ -1,0 +1,17 @@
+{
+  "id": "select_references_under_cursor",
+  "title": "Select references under cursor",
+  "description": "Выберите references символа statusCode под курсором и переименуйте его в stateCode, не трогая statusCodeValue.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор на statusCode.\n2. Выберите references символа под курсором через Space-h.\n3. Переименуйте символ в stateCode.\n4. Не меняйте statusCodeValue.\n5. Сохраните файл.\nHelix-шпаргалка:\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- '<space>h' выбирает все references под курсором как selection.\n- Самый короткий путь здесь: Поставьте курсор на statusCode -> Выберите references символа под курсором через Space-h -> Переименуйте символ в stateCode -> Не меняйте statusCodeValue.",
+  "tags": [
+    "lsp_select_references",
+    "multicursor",
+    "edit_change"
+  ],
+  "author_time": 16.0
+}

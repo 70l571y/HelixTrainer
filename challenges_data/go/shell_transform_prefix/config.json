@@ -1,0 +1,18 @@
+{
+  "id": "shell_transform_prefix",
+  "title": "Shell transform",
+  "description": "Преобразуйте список сервисов в строки с префиксом svc: через shell pipe.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите строки со значениями сервисов.\n2. Разделите выделение на строки, если это помогает.\n3. Нажмите '|'.\n4. Запустите shell-команду, которая добавит префикс 'svc:' к каждой строке.\nHelix-шпаргалка:\n- '|' отправляет selection в shell command и возвращает результат в буфер.\n- Для shell transform сначала удобно сузить selection до нужных строк или колонок.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Самый короткий путь здесь: Выделите строки со значениями сервисов -> Разделите выделение на строки, если это помогает -> Нажмите '|' -> Запустите shell-команду, которая добавит префикс 'svc:' к каждой строке.",
+  "tags": [
+    "shell_pipe",
+    "shell_transform",
+    "select_line",
+    "edit_change"
+  ],
+  "author_time": 14.0
+}

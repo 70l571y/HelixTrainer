@@ -1,0 +1,18 @@
+{
+  "id": "register_blackhole_swap",
+  "title": "Blackhole register",
+  "description": "Скопируйте stableValue, удалите draftValue через _-register и вставьте stableValue на его место.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите 'stableValue' и сохраните его в именованный регистр.\n2. Выделите 'draftValue'.\n3. Удалите его через '\"_d', чтобы не потерять сохранённое значение.\n4. Вставьте содержимое регистра на его место.\nHelix-шпаргалка:\n- '_d' удаляет текст в blackhole, не затирая полезный yank/register.\n- '<reg>y' и '<reg>p' пишут в именованный регистр и вставляют из него.\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.\n- Самый короткий путь здесь: Выделите 'stableValue' и сохраните его в именованный регистр -> Выделите 'draftValue' -> Удалите его через '\"_d', чтобы не потерять сохранённое значение -> Вставьте содержимое регистра на его место.",
+  "tags": [
+    "register",
+    "register_blackhole",
+    "edit_yank_paste",
+    "edit_delete"
+  ],
+  "author_time": 12.0
+}

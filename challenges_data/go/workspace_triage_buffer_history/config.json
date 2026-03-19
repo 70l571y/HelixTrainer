@@ -1,0 +1,27 @@
+{
+  "id": "workspace_triage_buffer_history",
+  "title": "Workspace triage with buffer history",
+  "description": "Исправьте ошибку в challenge.go через diagnostics, затем откройте symbol в symbols.go и вернитесь в исходный буфер через history.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go",
+    "symbols.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go",
+    "symbols.go": "goal_symbols.go"
+  },
+  "tips": "1. Откройте diagnostics и исправьте вызов в challenge.go.\n2. Затем через '<space>S' найдите symbol buildNote в symbols.go.\n3. Исправьте строку в symbols.go.\n4. Вернитесь в challenge.go через history буферов и сохраните оба файла.\nHelix-шпаргалка:\n- '<space>d' или '<space>D' дают быстрый вход в diagnostic без ручного поиска по файлу.\n- '<space>S' открывает workspace symbols и быстрее всего приводит к buildNote.\n- Самый короткий возврат здесь: после правки в symbols.go открыть '<space>b' и прыгнуть назад в предыдущий буфер через 'ga' или выбор из списка.\n- Самый короткий путь здесь: Откройте diagnostics и исправьте вызов в challenge.go -> Затем через '<space>S' найдите symbol buildNote в symbols.go -> Исправьте строку в symbols.go -> Вернитесь в challenge.go через history буферов и сохраните оба файла.",
+  "tags": [
+    "picker_diagnostics",
+    "picker_workspace_symbols",
+    "buffer_switch",
+    "edit_change"
+  ],
+  "author_time": 30.0
+}

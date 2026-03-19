@@ -1,0 +1,16 @@
+{
+  "id": "edit_case_toggle",
+  "title": "Смена регистра",
+  "description": "Приведите в верхний регистр только имя константы maxRetries, не меняя остальные строки.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор на maxRetries.\n2. Выделите только имя константы через 'miw'.\n3. Нажмите 'Alt-`', чтобы перевести выделение в upper case.\n4. Не трогайте height и width.\nHelix-шпаргалка:\n- 'miw' быстро выделяет слово целиком без захвата знака '=' и числа.\n- 'Alt-`' переводит текущее выделение в upper case, а '~' лишь переключает регистр.\n- Самый короткий путь здесь: курсор на слове -> 'miw' -> 'Alt-`'.",
+  "tags": [
+    "edit_case",
+    "select_basic"
+  ],
+  "author_time": 5.5
+}

@@ -1,0 +1,17 @@
+{
+  "id": "jump_label_target",
+  "title": "Двухсимвольные метки",
+  "description": "Используйте gw, чтобы быстро перейти к jumpHere в длинном файле и переименовать его.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор в начало файла.\n2. Нажмите 'gw'.\n3. Введите две подсвеченные буквы у 'jumpHere'.\n4. Исправьте имя на 'jumpTarget'.\nHelix-шпаргалка:\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'gw' включает jump labels: введите подсвеченную метку у цели.\n- 'gg', 'G', 'Ctrl-g' и 'gf' помогают быстро прыгать к цели.\n- Самый короткий путь здесь: Поставьте курсор в начало файла -> Нажмите 'gw' -> Введите две подсвеченные буквы у 'jumpHere' -> Исправьте имя на 'jumpTarget'.",
+  "tags": [
+    "movement_jump_label",
+    "movement_goto",
+    "edit_change"
+  ],
+  "author_time": 12.0
+}

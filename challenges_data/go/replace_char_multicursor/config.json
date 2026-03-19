@@ -1,0 +1,16 @@
+{
+  "id": "replace_char_multicursor",
+  "title": "Replace char with multicursor",
+  "description": "Создайте несколько курсоров на символе x и замените его на z во всех трёх строках одним приёмом.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Создайте несколько курсоров на символах x.\n2. Используйте replace char, а не insert mode.\n3. Измените все три вхождения сразу.\n4. Остальные символы не трогайте.\nHelix-шпаргалка:\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'r' заменяет символ под курсором без входа в insert mode.\n- Самый короткий путь здесь: Создайте несколько курсоров на символах x -> Используйте replace char, а не insert mode -> Измените все три вхождения сразу -> Остальные символы не трогайте.",
+  "tags": [
+    "multicursor",
+    "edit_replace"
+  ],
+  "author_time": 12.0
+}

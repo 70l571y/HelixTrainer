@@ -1,0 +1,18 @@
+{
+  "id": "surround_textobject_multicursor_combo",
+  "title": "Surround textobject multicursor combo",
+  "description": "У двух строк замените круглые скобки на квадратные, а у третьей удалите surround полностью.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Создайте несколько выделений на трёх выражениях.\n2. Для первых двух замените surround.\n3. Для третьего удалите surround совсем.\n4. Работайте через text objects и multicursor, а не вручную по символам.\nHelix-шпаргалка:\n- 'mi...' и 'ma...' выбирают объект изнутри или вместе с обёрткой.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'mrxy' меняет один surround на другой, например 'mr(['.\n- Самый короткий путь здесь: Создайте несколько выделений на трёх выражениях -> Для первых двух замените surround -> Для третьего удалите surround совсем -> Работайте через text objects и multicursor, а не вручную по символам.",
+  "tags": [
+    "surround_replace",
+    "surround_delete",
+    "multicursor",
+    "select_object"
+  ],
+  "author_time": 24.0
+}

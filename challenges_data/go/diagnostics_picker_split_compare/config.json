@@ -1,0 +1,27 @@
+{
+  "id": "diagnostics_picker_split_compare",
+  "title": "Diagnostics split compare",
+  "description": "Откройте diagnostics picker, сверяйтесь с reference.go в split и исправьте ошибки в challenge.go и service.go.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go",
+    "reference.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go",
+    "reference.go": "goal_reference.go"
+  },
+  "tips": "1. Откройте diagnostics picker через '<space>D' и исправьте вызов в challenge.go.\n2. Откройте reference.go в split, чтобы видеть правильное имя функции рядом.\n3. Перейдите в service.go и поправьте вызов buildBadge по образцу из reference.go.\n4. Сохраните challenge.go и service.go; reference.go менять не нужно.\nHelix-шпаргалка:\n- '<space>D' быстрее открывает список diagnostics по всему workspace, чем ручной обход по файлам.\n- 'Ctrl-w v' открывает split для сверки, а '<space>w' + 'h/j/k/l' переключает фокус между окнами.\n- 'Ctrl-o' помогает быстро вернуться после прыжков, если ушли к другой диагностике или в другой буфер.\n- Самый короткий путь здесь: Откройте diagnostics picker через '<space>D' и исправьте вызов в challenge.go -> Откройте reference.go в split, чтобы видеть правильное имя функции рядом -> Перейдите в service.go и поправьте вызов buildBadge по образцу из reference.go -> Сохраните challenge.go и service.go; reference.go менять не нужно.",
+  "tags": [
+    "picker_diagnostics",
+    "window_split",
+    "jumplist",
+    "edit_change"
+  ],
+  "author_time": 27.0
+}

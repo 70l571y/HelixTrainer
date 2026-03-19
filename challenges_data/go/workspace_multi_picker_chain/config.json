@@ -1,0 +1,25 @@
+{
+  "id": "workspace_multi_picker_chain",
+  "title": "Workspace multi picker chain",
+  "description": "Используйте diagnostics picker и workspace symbols в одной задаче: исправьте ошибку, затем найдите symbol и обновите его во втором файле.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "symbols.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "symbols.go": "goal_symbols.go"
+  },
+  "tips": "1. Исправьте diagnostic в challenge.go.\n2. Затем откройте workspace symbols.\n3. Найдите buildWorkspaceName в symbols.go и исправьте строку.\n4. Вернитесь в основной буфер и сохраните файлы.\nHelix-шпаргалка:\n- '<space>d' открывает diagnostics текущего файла, '<space>D' - по всему workspace.\n- '<space>S' ищет символ по всему workspace.\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- Самый короткий путь здесь: Исправьте diagnostic в challenge.go -> Затем откройте workspace symbols -> Найдите buildWorkspaceName в symbols.go и исправьте строку -> Вернитесь в основной буфер и сохраните файлы.",
+  "tags": [
+    "picker_diagnostics",
+    "picker_workspace_symbols",
+    "buffer_switch",
+    "edit_change"
+  ],
+  "author_time": 31.0
+}

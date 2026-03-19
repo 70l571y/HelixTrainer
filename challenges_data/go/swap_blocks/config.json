@@ -1,0 +1,17 @@
+{
+  "id": "swap_blocks",
+  "title": "Обмен блоков кода",
+  "description": "Поменяйте две функции местами, чтобы 'processData' шла перед 'main'.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите 'main' используя xxx, 3x или maf.\n2. Удалите её используя d\n3. Перейдите вниз.\n4. Вставьте p.\nHelix-шпаргалка:\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.\n- 'y' копирует, 'p' вставляет после курсора или selection.\n- 'x' выделяет строку; счётчик работает как '3x' для трёх строк.\n- Самый короткий путь здесь: Выделите 'main' используя xxx, 3x или maf -> Удалите её используя d -> Перейдите вниз -> Вставьте p.",
+  "tags": [
+    "edit_yank_paste",
+    "edit_delete",
+    "select_line"
+  ],
+  "author_time": 6.5
+}

@@ -1,0 +1,22 @@
+{
+  "id": "picker_buffer",
+  "title": "Переключение буферов",
+  "description": "Откройте handler.go и middleware.go через hotkey-driven navigation и используйте picker буферов для навигации и редактирования.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "handler.go",
+    "middleware.go"
+  ],
+  "tips": "1. Откройте handler.go и middleware.go через '<space>f'.\n2. Откройте picker буферов через '<space>b'.\n3. Выберите handler.go и измените имя функции.\n4. Через '<space>b' перейдите в middleware.go.\n5. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>b' показывает открытые буферы и позволяет быстро прыгнуть в нужный.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Через ':o file.go' можно открыть файл напрямую, если задача тренирует command mode.\n- Самый короткий путь здесь: Откройте handler.go и middleware.go через '<space>f' -> Откройте picker буферов через '<space>b' -> Выберите handler.go и измените имя функции -> Через '<space>b' перейдите в middleware.go.",
+  "tags": [
+    "picker_buffer",
+    "buffer_open",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 25.0
+}

@@ -1,0 +1,17 @@
+{
+  "id": "split_regex_keep_numeric",
+  "title": "Split regex and keep numeric parts",
+  "description": "Оставьте только числовые значения из списка version=число.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите строки списка.\n2. Разбейте их через 'S' по '='.\n3. Оставьте только числовые части.\n4. Удалите всё лишнее.\nHelix-шпаргалка:\n- 'S' делит selection по regex-разделителю и даёт отдельные части.\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.\n- 'K' оставляет только совпавшие курсоры, 'Alt-K' удаляет совпавшие.\n- Самый короткий путь здесь: Выделите строки списка -> Разбейте их через 'S' по '=' -> Оставьте только числовые части -> Удалите всё лишнее.",
+  "tags": [
+    "select_split_regex",
+    "filter",
+    "edit_delete"
+  ],
+  "author_time": 13.0
+}

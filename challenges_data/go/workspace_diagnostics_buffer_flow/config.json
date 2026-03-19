@@ -1,0 +1,24 @@
+{
+  "id": "workspace_diagnostics_buffer_flow",
+  "title": "Workspace diagnostics with buffer flow",
+  "description": "Исправьте две ошибки через diagnostics picker и вернитесь в исходный буфер через history после переходов.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Откройте diagnostics picker и исправьте ошибку в challenge.go.\n2. Перейдите ко второй ошибке в helper.go.\n3. Вернитесь в исходный буфер через history буферов.\n4. Сохраните оба файла.\nHelix-шпаргалка:\n- ']d' идёт к следующей диагностике, '[d' - к предыдущей.\n- '<space>d' открывает diagnostics текущего файла, '<space>D' - по всему workspace.\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- Самый короткий путь здесь: Откройте diagnostics picker и исправьте ошибку в challenge.go -> Перейдите ко второй ошибке в helper.go -> Вернитесь в исходный буфер через history буферов -> Сохраните оба файла.",
+  "tags": [
+    "picker_diagnostics",
+    "buffer_switch",
+    "diagnostics_nav"
+  ],
+  "author_time": 19.0
+}

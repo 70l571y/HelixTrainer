@@ -1,0 +1,18 @@
+{
+  "id": "selection_pipeline_refactor",
+  "title": "Selection pipeline refactor",
+  "description": "Разбейте пары key=value, оставьте только active строки, переставьте значения и приведите результат к виду value:key.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите строки списка.\n2. Разбейте их на selections по '='.\n3. Отфильтруйте только active строки.\n4. Переставьте значения местами и получите value:key.\n5. Удалите inactive строку.\nHelix-шпаргалка:\n- 'S' делит selection по regex-разделителю и даёт отдельные части.\n- 'Alt-(' и 'Alt-)' циклически меняют содержимое selection местами.\n- Сначала выделите нужный блок, затем нажмите '=' только для него.\n- Самый короткий путь здесь: Выделите строки списка -> Разбейте их на selections по '=' -> Отфильтруйте только active строки -> Переставьте значения местами и получите value:key.",
+  "tags": [
+    "select_split_regex",
+    "filter",
+    "selection_rotate_contents",
+    "format_selection"
+  ],
+  "author_time": 24.0
+}

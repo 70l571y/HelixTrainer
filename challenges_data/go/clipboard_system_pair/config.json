@@ -1,0 +1,17 @@
+{
+  "id": "clipboard_system_pair",
+  "title": "Системный clipboard",
+  "description": "Скопируйте token через системный clipboard и вставьте его во вторую строку.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите строку с token.\n2. Нажмите '<space>y' для копирования в системный clipboard.\n3. Перейдите на пустую строку.\n4. Нажмите '<space>p' для вставки.\nHelix-шпаргалка:\n- '<space>y' копирует в системный clipboard, '<space>p' вставляет из него.\n- 'y' копирует, 'p' вставляет после курсора или selection.\n- 'x' выделяет строку; счётчик работает как '3x' для трёх строк.\n- Самый короткий путь здесь: Выделите строку с token -> Нажмите '<space>y' для копирования в системный clipboard -> Перейдите на пустую строку -> Нажмите '<space>p' для вставки.",
+  "tags": [
+    "clipboard_system",
+    "edit_yank_paste",
+    "select_line"
+  ],
+  "author_time": 9.0
+}

@@ -1,0 +1,17 @@
+{
+  "id": "replace_with_yank",
+  "title": "Замена содержимым регистра",
+  "description": "Скопируйте строку ready и замените строку pending через R.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите строку 'ready' и нажмите 'y'.\n2. Выделите строку 'pending'.\n3. Нажмите 'R' для замены скопированным текстом.\nHelix-шпаргалка:\n- '<reg>y' и '<reg>p' пишут в именованный регистр и вставляют из него.\n- 'R' заменяет выделение содержимым из yank/register.\n- 'y' копирует, 'p' вставляет после курсора или selection.\n- Самый короткий путь здесь: Выделите строку 'ready' и нажмите 'y' -> Выделите строку 'pending' -> Нажмите 'R' для замены скопированным текстом.",
+  "tags": [
+    "edit_replace_yanked",
+    "edit_yank_paste",
+    "register"
+  ],
+  "author_time": 6.5
+}

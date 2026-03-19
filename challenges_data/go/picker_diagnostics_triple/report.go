@@ -1,0 +1,6 @@
+package main
+
+func renderReport() string {
+	reportTitle := "weekly"
+	return reportTitel
+}

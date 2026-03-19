@@ -1,0 +1,24 @@
+{
+  "id": "picker_diagnostics_workspace",
+  "title": "Диагностика через picker",
+  "description": "Откройте workspace diagnostics picker и исправьте ошибки в двух файлах.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "report.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "report.go": "goal_report.go"
+  },
+  "tips": "1. Откройте picker диагностик: '<space>D' или '<space>d'.\n2. Перейдите к ошибке в текущем файле и исправьте её.\n3. Снова откройте picker и перейдите к ошибке в report.go.\n4. Исправьте вторую ошибку и сохраните оба файла.\nHelix-шпаргалка:\n- ']d' идёт к следующей диагностике, '[d' - к предыдущей.\n- '<space>d' открывает diagnostics текущего файла, '<space>D' - по всему workspace.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Самый короткий путь здесь: Откройте picker диагностик: '<space>D' или '<space>d' -> Перейдите к ошибке в текущем файле и исправьте её -> Снова откройте picker и перейдите к ошибке в report.go -> Исправьте вторую ошибку и сохраните оба файла.",
+  "tags": [
+    "picker_diagnostics",
+    "diagnostics_nav",
+    "edit_change"
+  ],
+  "author_time": 18.0
+}

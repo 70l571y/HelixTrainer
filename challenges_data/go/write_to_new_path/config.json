@@ -1,0 +1,22 @@
+{
+  "id": "write_to_new_path",
+  "title": "Write buffer to new path",
+  "description": "Исправьте banner на Helix banner и сохраните этот же буфер ещё и в snapshot.go через ':write snapshot.go'.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "validation": {
+    "challenge.go": "goal.go",
+    "snapshot.go": "goal_snapshot.go"
+  },
+  "tips": "1. Исправьте строку banner.\n2. Откройте command mode.\n3. Сохраните текущий буфер ещё и в snapshot.go через ':write snapshot.go'.\n4. Убедитесь, что основной файл тоже сохранён.\n5. Завершите через ':wq'.\nHelix-шпаргалка:\n- ':' открывает command mode; удобно для ':o', ':write', ':update', ':wq'.\n- ':w', ':write path', ':update' и ':wq' закрывают сценарий через command mode.\n- Через ':o file.go' можно открыть файл напрямую, если задача тренирует command mode.\n- Самый короткий путь здесь: Исправьте строку banner -> Откройте command mode -> Сохраните текущий буфер ещё и в snapshot.go через ':write snapshot.go' -> Убедитесь, что основной файл тоже сохранён.",
+  "tags": [
+    "command_mode",
+    "file_save",
+    "buffer_open",
+    "track_optional_command_line"
+  ],
+  "author_time": 14.0
+}

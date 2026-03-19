@@ -1,0 +1,16 @@
+{
+  "id": "select_syntax_expand_call",
+  "title": "Syntax expand call",
+  "description": "Используйте Alt-o, чтобы выбрать весь вызов normalize(userName) и заменить его на userName.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор внутрь вызова normalize(userName).\n2. Нажимайте 'Alt-o', пока не будет выбран весь call expression.\n3. Замените вызов на 'userName'.\nHelix-шпаргалка:\n- 'Alt-o' расширяет selection по синтаксическому дереву.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Самый короткий путь здесь: Поставьте курсор внутрь вызова normalize(userName) -> Нажимайте 'Alt-o', пока не будет выбран весь call expression -> Замените вызов на 'userName'.",
+  "tags": [
+    "select_syntax",
+    "edit_change"
+  ],
+  "author_time": 11.0
+}

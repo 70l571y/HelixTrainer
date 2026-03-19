@@ -1,0 +1,17 @@
+{
+  "id": "clipboard_register_combo",
+  "title": "Clipboard and register combo",
+  "description": "Соберите новый текст из clipboard-фрагмента и named-register фрагмента, не потеряв ни один из них.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Возьмите 'Helix' через system clipboard.\n2. Сохраните 'workflow' в named register.\n3. Соберите строку 'Helix workflow'.\n4. Не набирайте результат вручную.\nHelix-шпаргалка:\n- '<reg>y' и '<reg>p' пишут в именованный регистр и вставляют из него.\n- '<space>y' копирует в системный clipboard, '<space>p' вставляет из него.\n- 'y' копирует, 'p' вставляет после курсора или selection.\n- Самый короткий путь здесь: Возьмите 'Helix' через system clipboard -> Сохраните 'workflow' в named register -> Соберите строку 'Helix workflow' -> Не набирайте результат вручную.",
+  "tags": [
+    "clipboard_system",
+    "register",
+    "edit_yank_paste"
+  ],
+  "author_time": 18.0
+}

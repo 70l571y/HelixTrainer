@@ -1,0 +1,16 @@
+{
+  "id": "edit_delete_block",
+  "title": "Удаление блока",
+  "description": "Удалите всю функцию 'debugHelpers'.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Перейдите к 'func debugHelpers'.\n2. 'maf' (match around function) для выделения.\n3. 'd' для удаления.\nHelix-шпаргалка:\n- 'mi...' и 'ma...' выбирают объект изнутри или вместе с обёрткой.\n- 'd' удаляет текущее выделение; для linewise удобно сочетать с 'x'.\n- Самый короткий путь здесь: Перейдите к 'func debugHelpers' -> 'maf' (match around function) для выделения -> 'd' для удаления.",
+  "tags": [
+    "select_object",
+    "edit_delete"
+  ],
+  "author_time": 5.67
+}

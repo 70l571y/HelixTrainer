@@ -1,0 +1,21 @@
+{
+  "id": "picker_files_split",
+  "title": "Файловый пикер в split",
+  "description": "Откройте utils.go через файловый пикер сразу в split и скопируйте helper в основной файл.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "utils.go"
+  ],
+  "tips": "1. Откройте файловый пикер: '<space>f'.\n2. Выберите utils.go.\n3. Нажмите 'Ctrl-v' или 'Ctrl-s' для открытия в split.\n4. Скопируйте helper и вставьте его в основной файл.\nHelix-шпаргалка:\n- '<space>f' открывает picker файлов; начните печатать имя и нажмите Enter.\n- 'Ctrl-w v' и 'Ctrl-w s' открывают вертикальный и горизонтальный split.\n- После split переходите между окнами через '<space>w' и затем 'h/j/k/l'.\n- Самый короткий путь здесь: Откройте файловый пикер: '<space>f' -> Выберите utils.go -> Нажмите 'Ctrl-v' или 'Ctrl-s' для открытия в split -> Скопируйте helper и вставьте его в основной файл.",
+  "tags": [
+    "picker_files",
+    "window_split",
+    "window_move",
+    "edit_yank_paste"
+  ],
+  "author_time": 18.0
+}

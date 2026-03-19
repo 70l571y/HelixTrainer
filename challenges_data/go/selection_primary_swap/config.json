@@ -1,0 +1,17 @@
+{
+  "id": "selection_primary_swap",
+  "title": "Swap primary selection",
+  "description": "Создайте несколько выделений и измените только primary selection на main.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Создайте несколько выделений на token.\n2. Переключите primary selection.\n3. Измените только primary на main.\n4. Остальные token не трогайте.\nHelix-шпаргалка:\n- '(' и ')' меняют primary selection, 'Alt-,' убирает лишнюю primary.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Самый короткий путь здесь: Создайте несколько выделений на token -> Переключите primary selection -> Измените только primary на main -> Остальные token не трогайте.",
+  "tags": [
+    "selection_cycle",
+    "multicursor",
+    "edit_change"
+  ],
+  "author_time": 15.0
+}

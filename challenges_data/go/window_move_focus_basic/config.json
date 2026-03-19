@@ -1,0 +1,24 @@
+{
+  "id": "window_move_focus_basic",
+  "title": "Move focus across windows",
+  "description": "Откройте два split-окна, исправьте marker в notes.go и вернитесь в основной буфер.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "notes.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "notes.go": "goal_notes.go"
+  },
+  "tips": "1. Откройте notes.go в split.\n2. Переключайтесь между окнами через '<space>w'.\n3. Исправьте marker в notes.go.\n4. Вернитесь в основной буфер и сохраните файлы.\nHelix-шпаргалка:\n- 'Ctrl-w v' и 'Ctrl-w s' открывают вертикальный и горизонтальный split.\n- После split переходите между окнами через '<space>w' и затем 'h/j/k/l'.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Самый короткий путь здесь: Откройте notes.go в split -> Переключайтесь между окнами через '<space>w' -> Исправьте marker в notes.go -> Вернитесь в основной буфер и сохраните файлы.",
+  "tags": [
+    "window_split",
+    "window_move",
+    "edit_change"
+  ],
+  "author_time": 15.0
+}

@@ -1,0 +1,17 @@
+{
+  "id": "search_replace_selections_values",
+  "title": "Replace only selected values",
+  "description": "Выберите только числовые значения timeout и замените их на 60, не меняя retries.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Сузьте область до timeout-полей.\n2. Создайте выделения только на их значениях.\n3. Замените выбранные числа на 60.\n4. retries не трогайте.\nHelix-шпаргалка:\n- 's' создаёт selection по regex, затем 'c' меняет все выделения сразу.\n- Несколько selection в Helix редактируются одновременно одной командой 'c', 'r' или вставкой.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Самый короткий путь здесь: Сузьте область до timeout-полей -> Создайте выделения только на их значениях -> Замените выбранные числа на 60 -> retries не трогайте.",
+  "tags": [
+    "search_replace_selections",
+    "multicursor",
+    "edit_change"
+  ],
+  "author_time": 17.0
+}

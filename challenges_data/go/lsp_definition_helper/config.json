@@ -1,0 +1,24 @@
+{
+  "id": "lsp_definition_helper",
+  "title": "Переход к определению",
+  "description": "Перейдите к определению normalizeEmail и добавьте приведение к нижнему регистру.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "user_service.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "user_service.go": "goal_user_service.go"
+  },
+  "tips": "1. Поставьте курсор на 'normalizeEmail' в вызове.\n2. Нажмите 'gd' для перехода к определению.\n3. Добавьте 'strings.ToLower(...)' вокруг текущего return.\n4. Сохраните файл helper-а и вернитесь назад.\nHelix-шпаргалка:\n- 'gd' прыгает к определению символа под курсором.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'gg', 'G', 'Ctrl-g' и 'gf' помогают быстро прыгать к цели.\n- Самый короткий путь здесь: Поставьте курсор на 'normalizeEmail' в вызове -> Нажмите 'gd' для перехода к определению -> Добавьте 'strings.ToLower(...)' вокруг текущего return -> Сохраните файл helper-а и вернитесь назад.",
+  "tags": [
+    "lsp_definition",
+    "movement_goto",
+    "edit_change"
+  ],
+  "author_time": 14.0
+}

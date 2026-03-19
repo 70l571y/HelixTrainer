@@ -1,0 +1,17 @@
+{
+  "id": "register_assembly_multistep",
+  "title": "Register assembly multistep",
+  "description": "Соберите строку 'api::v2::ready' из трёх отдельных фрагментов, используя named registers и не теряя промежуточные части.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Сохраните три части в разные регистры.\n2. При необходимости используйте append или blackhole.\n3. Соберите итог в result без ручного набора целой строки.\n4. Проверьте точный порядок фрагментов.\nHelix-шпаргалка:\n- '_d' удаляет текст в blackhole, не затирая полезный yank/register.\n- '<reg>y' и '<reg>p' пишут в именованный регистр и вставляют из него.\n- 'y' копирует, 'p' вставляет после курсора или selection.\n- Самый короткий путь здесь: Сохраните три части в разные регистры -> При необходимости используйте append или blackhole -> Соберите итог в result без ручного набора целой строки -> Проверьте точный порядок фрагментов.",
+  "tags": [
+    "register",
+    "register_blackhole",
+    "edit_yank_paste"
+  ],
+  "author_time": 24.0
+}

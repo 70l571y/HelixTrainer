@@ -1,0 +1,25 @@
+{
+  "id": "picker_query_from_register",
+  "title": "Picker query from register",
+  "description": "Сохраните query в register, вставьте её в picker и используйте для перехода в helper.go, чтобы исправить строку.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Сохраните query 'helper' в register.\n2. Откройте picker файлов.\n3. Вставьте query в picker через 'Ctrl-r'.\n4. Перейдите в helper.go и исправьте строку.\n5. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>f' открывает picker файлов; начните печатать имя и нажмите Enter.\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- '<reg>y' и '<reg>p' пишут в именованный регистр и вставляют из него.\n- Самый короткий путь здесь: Сохраните query 'helper' в register -> Откройте picker файлов -> Вставьте query в picker через 'Ctrl-r' -> Перейдите в helper.go и исправьте строку.",
+  "tags": [
+    "picker_files",
+    "register",
+    "buffer_switch",
+    "edit_change"
+  ],
+  "author_time": 20.0
+}

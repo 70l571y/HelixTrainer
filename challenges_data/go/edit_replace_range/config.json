@@ -1,0 +1,16 @@
+{
+  "id": "edit_replace_range",
+  "title": "Инкремент/Декремент",
+  "description": "Увеличьте max_retries и уменьшите timeout_seconds.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Перейдите к '3'. Нажмите 'Ctrl-a' для инкремента.\n2. Перейдите к '30'. Нажмите 'Ctrl-x' для декремента.\nHelix-шпаргалка:\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'Ctrl-a' увеличивает число под курсором, 'Ctrl-x' уменьшает.\n- Самый короткий путь здесь: Перейдите к '3'. Нажмите 'Ctrl-a' для инкремента -> Перейдите к '30'. Нажмите 'Ctrl-x' для декремента.",
+  "tags": [
+    "edit_change",
+    "number_increment"
+  ],
+  "author_time": 8.6
+}

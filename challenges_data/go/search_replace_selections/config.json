@@ -1,0 +1,18 @@
+{
+  "id": "search_replace_selections",
+  "title": "Замена через selections",
+  "description": "Замените все old_ на new_ через % + s + c, без команды :%s.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите весь файл: '%'.\n2. Нажмите 's' и введите 'old_'.\n3. Подтвердите regex.\n4. Нажмите 'c' и введите 'new_'.\nHelix-шпаргалка:\n- 's' создаёт selection по regex, затем 'c' меняет все выделения сразу.\n- 's' ищет regex внутри selection и создаёт курсоры на совпадениях.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Самый короткий путь здесь: Выделите весь файл: '%' -> Нажмите 's' и введите 'old_' -> Подтвердите regex -> Нажмите 'c' и введите 'new_'.",
+  "tags": [
+    "search_replace_selections",
+    "select_all",
+    "select_regex",
+    "edit_change"
+  ],
+  "author_time": 11.0
+}

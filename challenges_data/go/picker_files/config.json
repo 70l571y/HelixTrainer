@@ -1,0 +1,21 @@
+{
+  "id": "picker_files",
+  "title": "Поиск файлов",
+  "description": "Используйте picker файлов для открытия utils.go и скопируйте функцию helper в main.go.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "utils.go",
+    "config.go"
+  ],
+  "tips": "1. Откройте picker файлов: '<space>' -> 'f'.\n2. Начните вводить 'utils'.\n3. Выберите utils.go из списка.\n4. Выделите функцию (maf).\n5. Копируйте: 'y'.\n6. Переключитесь: '<space>' -> 'b' -> выберите main.go.\n7. Вставьте: 'p'.\nHelix-шпаргалка:\n- '<space>f' открывает picker файлов; начните печатать имя и нажмите Enter.\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- 'y' копирует, 'p' вставляет после курсора или selection.\n- Самый короткий путь здесь: Откройте picker файлов: '<space>' -> 'f' -> Начните вводить 'utils' -> Выберите utils.go из списка -> Выделите функцию (maf).",
+  "tags": [
+    "picker_files",
+    "buffer_switch",
+    "edit_yank_paste"
+  ],
+  "author_time": 20.0
+}

@@ -1,0 +1,16 @@
+{
+  "id": "surround_add_parens",
+  "title": "Добавление скобок",
+  "description": "Оберните выражение 'x + y' в скобки.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите выражение 'x + y'.\n2. Нажмите 'ms(' для добавления скобок.\nHelix-шпаргалка:\n- 'ms<char>' добавляет surround вокруг текущего selection.\n- 'v' начинает selection, 'x' быстро выделяет строку целиком.\n- Самый короткий путь здесь: Выделите выражение 'x + y' -> Нажмите 'ms(' для добавления скобок.",
+  "tags": [
+    "surround_add",
+    "select_basic"
+  ],
+  "author_time": 7.03
+}

@@ -1,0 +1,26 @@
+{
+  "id": "picker_last_picker_reopen",
+  "title": "Reopen last picker",
+  "description": "Откройте file picker, затем повторно откройте last picker и используйте его, чтобы попасть в helper.go и исправить строку.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go",
+    "other.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go",
+    "other.go": "goal_other.go"
+  },
+  "tips": "1. Откройте picker файлов и посетите один файл.\n2. Откройте last picker через 'Space-\\''.\n3. Выберите helper.go из повторно открытого picker.\n4. Исправьте строку и сохраните файлы.\nHelix-шпаргалка:\n- '<space>f' открывает picker файлов; начните печатать имя и нажмите Enter.\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- Самый короткий путь здесь: Откройте picker файлов и посетите один файл -> Откройте last picker через 'Space-\\'' -> Выберите helper.go из повторно открытого picker -> Исправьте строку и сохраните файлы.",
+  "tags": [
+    "picker_files",
+    "buffer_switch",
+    "edit_change"
+  ],
+  "author_time": 19.0
+}

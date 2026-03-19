@@ -1,0 +1,17 @@
+{
+  "id": "jumplist_return",
+  "title": "Возврат по jumplist",
+  "description": "Сохраните позицию, исправьте удалённую строку и вернитесь назад через jumplist.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор на 'ServiceName' и нажмите 'Ctrl-s'.\n2. Перейдите вниз к 'legasyTimeout'.\n3. Исправьте его на 'legacyTimeout'.\n4. Нажмите 'Ctrl-o' чтобы вернуться назад.\n5. Исправьте 'api-gatway' на 'api-gateway'.\nHelix-шпаргалка:\n- 'Ctrl-s' ставит jump, 'Ctrl-o' идёт назад, 'Ctrl-i' - вперёд по jumplist.\n- 'c' меняет текущее выделение и сразу переводит в insert mode.\n- 'gg', 'G', 'Ctrl-g' и 'gf' помогают быстро прыгать к цели.\n- Самый короткий путь здесь: Поставьте курсор на 'ServiceName' и нажмите 'Ctrl-s' -> Перейдите вниз к 'legasyTimeout' -> Исправьте его на 'legacyTimeout' -> Нажмите 'Ctrl-o' чтобы вернуться назад.",
+  "tags": [
+    "jumplist",
+    "movement_goto",
+    "edit_change"
+  ],
+  "author_time": 18.0
+}

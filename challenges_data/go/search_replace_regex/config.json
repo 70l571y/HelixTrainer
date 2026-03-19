@@ -1,0 +1,18 @@
+{
+  "id": "search_replace_regex",
+  "title": "Regex замена",
+  "description": "Используйте :%s для замены всех 'old_' префиксов на 'new_' в именах переменных.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Откройте command mode: ':'.\n2. Введите: '%s/old_/new_/g'.\n3. Нажмите Enter для глобальной замены.\n4. % означает весь файл, g - все совпадения.\nHelix-шпаргалка:\n- '/' ищет вперёд, '?' назад, 'n'/'N' идут по совпадениям.\n- 'r' заменяет символ под курсором без входа в insert mode.\n- ':' открывает command mode; удобно для ':o', ':write', ':update', ':wq'.\n- Самый короткий путь здесь: Откройте command mode: ':' -> Введите: '%s/old_/new_/g' -> Нажмите Enter для глобальной замены -> % означает весь файл, g - все совпадения.",
+  "tags": [
+    "command_mode",
+    "search_basic",
+    "edit_replace",
+    "track_optional_command_line"
+  ],
+  "author_time": 8.0
+}

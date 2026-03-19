@@ -1,0 +1,27 @@
+{
+  "id": "select_tree_parameter_refactor_crossfile",
+  "title": "Cross-file parameter refactor",
+  "description": "Удалите параметр timeout из сигнатуры runTask и всех вызовов в нескольких файлах.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go",
+    "worker.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go",
+    "worker.go": "goal_worker.go"
+  },
+  "tips": "1. Поставьте курсор на timeout в сигнатуре runTask.\n2. Используйте 'map' или 'mip' и удалите параметр.\n3. Найдите все вызовы через 'gr' или search.\n4. Удалите средний аргумент timeout во всех call sites.\n5. Повторите то же для formatTask.\nHelix-шпаргалка:\n- 'gr' открывает references, а '<space>h' может выделить их сразу для общей правки.\n- Для параметров используйте 'mip' или 'map', чтобы брать аргумент целиком.\n- Для кода удобнее tree-sitter text objects вроде 'mif', 'maf', 'mip'.\n- Самый короткий путь здесь: Поставьте курсор на timeout в сигнатуре runTask -> Используйте 'map' или 'mip' и удалите параметр -> Найдите все вызовы через 'gr' или search -> Удалите средний аргумент timeout во всех call sites.",
+  "tags": [
+    "select_tree_parameter",
+    "select_tree_object",
+    "lsp_references",
+    "edit_delete"
+  ],
+  "author_time": 28.0
+}

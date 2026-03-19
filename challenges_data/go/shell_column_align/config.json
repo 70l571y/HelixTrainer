@@ -1,0 +1,17 @@
+{
+  "id": "shell_column_align",
+  "title": "Column-style shell reshape",
+  "description": "Преобразуйте пары name:value в список value | name через shell transform.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите строки со значениями.\n2. Прогоните их через shell transform.\n3. Переставьте колонки местами и вставьте разделитель ' | '.\n4. Верните результат в буфер.\nHelix-шпаргалка:\n- '|' отправляет selection в shell command и возвращает результат в буфер.\n- Для shell transform сначала удобно сузить selection до нужных строк или колонок.\n- '&' выравнивает несколько строк или колонок по текущим selection.\n- Самый короткий путь здесь: Выделите строки со значениями -> Прогоните их через shell transform -> Переставьте колонки местами и вставьте разделитель ' | ' -> Верните результат в буфер.",
+  "tags": [
+    "shell_transform",
+    "shell_pipe",
+    "selection_align"
+  ],
+  "author_time": 18.0
+}

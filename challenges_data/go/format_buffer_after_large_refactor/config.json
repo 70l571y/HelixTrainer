@@ -1,0 +1,24 @@
+{
+  "id": "format_buffer_after_large_refactor",
+  "title": "Format after large refactor",
+  "description": "После правок приведите основной буфер к gofmt-виду и отдельно отформатируйте блок во втором файле.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "exact",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Исправьте форматирование в основном буфере целиком.\n2. Во втором файле отформатируйте только map-литерал.\n3. Не меняйте лишний текст.\n4. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>b' открывает picker буферов; 'ga', 'gn', 'gp' помогают ходить по истории и соседям.\n- Сначала выделите нужный блок, затем нажмите '=' только для него.\n- '=' форматирует selection, а при отсутствии selection - весь буфер.\n- Самый короткий путь здесь: Исправьте форматирование в основном буфере целиком -> Во втором файле отформатируйте только map-литерал -> Не меняйте лишний текст -> Сохраните оба файла.",
+  "tags": [
+    "format_buffer",
+    "format_selection",
+    "buffer_switch"
+  ],
+  "author_time": 24.0
+}

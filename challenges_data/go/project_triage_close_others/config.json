@@ -1,0 +1,27 @@
+{
+  "id": "project_triage_close_others",
+  "title": "Project triage and close others",
+  "description": "Исправьте две диагностические ошибки в разных файлах, затем закройте лишние окна и оставьте фокус на основном буфере.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go",
+    "report.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go",
+    "report.go": "goal_report.go"
+  },
+  "tips": "1. Откройте diagnostics picker и исправьте ошибку в challenge.go.\n2. Перейдите к ошибке в service.go и исправьте её.\n3. При необходимости откройте report.go для сверки.\n4. Закройте лишние окна и оставьте основной буфер.\n5. Сохраните все файлы.\nHelix-шпаргалка:\n- '<space>d' открывает diagnostics текущего файла, '<space>D' - по всему workspace.\n- После split переходите между окнами через '<space>w' и затем 'h/j/k/l'.\n- 'Ctrl-w q' закрывает текущее окно, 'Ctrl-w o' оставляет только текущее.\n- Самый короткий путь здесь: Откройте diagnostics picker и исправьте ошибку в challenge.go -> Перейдите к ошибке в service.go и исправьте её -> При необходимости откройте report.go для сверки -> Закройте лишние окна и оставьте основной буфер.",
+  "tags": [
+    "picker_diagnostics",
+    "window_close",
+    "window_move",
+    "buffer_switch"
+  ],
+  "author_time": 26.0
+}

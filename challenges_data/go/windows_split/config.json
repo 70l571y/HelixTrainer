@@ -1,0 +1,22 @@
+{
+  "id": "windows_split",
+  "title": "Разделение окон",
+  "description": "Откройте utils.go в split hotkeys-способом и скопируйте функцию в основной файл.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "utils.go"
+  ],
+  "tips": "1. Откройте вертикальный split через 'Ctrl-w v'.\n2. В новом окне откройте utils.go через '<space>f' и найдите helper.\n3. Выделите функцию целиком, скопируйте её и вернитесь в основной буфер через '<space>w' + 'h/l'.\n4. Вставьте helper над main.\n5. Закройте временное окно через 'Ctrl-w q' и сохраните результат.\nHelix-шпаргалка:\n- 'Ctrl-w v' и 'Ctrl-w s' открывают вертикальный и горизонтальный split.\n- После split быстрее всего переходить между окнами через '<space>w' и затем 'h/j/k/l'.\n- Для переноса функции удобно выделить её text object-ом целиком, затем 'y' и 'p'.\n- Самый короткий путь здесь: Откройте вертикальный split через 'Ctrl-w v' -> В новом окне откройте utils.go через '<space>f' и найдите helper -> Выделите функцию целиком, скопируйте её и вернитесь в основной буфер через '<space>w' + 'h/l' -> Вставьте helper над main.",
+  "tags": [
+    "window_split",
+    "window_move",
+    "window_close",
+    "edit_yank_paste",
+    "track_core_hotkey"
+  ],
+  "author_time": 25.0
+}
