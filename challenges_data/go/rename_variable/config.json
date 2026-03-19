@@ -1,0 +1,16 @@
+{
+    "id": "rename_variable",
+    "title": "Переименование переменных",
+    "description": "Переименуйте 'd' в 'data' и 'x' в 'total' везде.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. 's' для выделения.\n2. '\\bd\\b' (граница слова) для匹配 'd'.\n3. Enter, затем 'c' для изменения.\n\n'data',\n4. x то же самое, но граница слова не нужна.",
+    "tags": [
+        "select_regex",
+        "edit_change"
+    ],
+    "author_time": 27.02
+}

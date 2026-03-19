@@ -1,0 +1,16 @@
+{
+    "id": "movement_long_jump",
+    "title": "Прыжок по списку",
+    "description": "Перейдите в середину файла и измените 'TARGET_VALUE' с 100 на 200.",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Используйте 'gg', затем счётчик по строкам или поиск '/TARGET' для быстрого прыжка.\n2. Измените значение через 'ciw' или 'r'.",
+    "tags": [
+        "movement_goto",
+        "edit_change"
+    ],
+    "author_time": 6.11
+}

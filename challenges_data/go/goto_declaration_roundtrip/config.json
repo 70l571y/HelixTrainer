@@ -1,0 +1,26 @@
+{
+    "id": "goto_declaration_roundtrip",
+    "title": "Goto declaration roundtrip",
+    "description": "Перейдите к объявлению метода Run, переименуйте его в Execute и обновите вызов и реализацию.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "api.go",
+        "worker.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "api.go": "goal_api.go",
+        "worker.go": "goal_worker.go"
+    },
+    "tips": "1. Поставьте курсор на Run в вызове.\n2. Перейдите к объявлению метода через gD.\n3. Переименуйте метод интерфейса в Execute.\n4. Обновите реализацию и вызов.\n5. Сохраните все файлы.",
+    "tags": [
+        "lsp_declaration",
+        "jumplist",
+        "edit_change"
+    ],
+    "author_time": 19.0
+}

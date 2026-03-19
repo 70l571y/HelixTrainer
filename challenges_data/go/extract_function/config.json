@@ -1,0 +1,16 @@
+{
+    "id": "extract_function",
+    "title": "Извлечение функции",
+    "description": "Рефакторинг 'volumeCylinder' для повторного использования 'areaCircle' вместо дублирования формулы.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Перейдите к началу сигнатуры функции areaCircle\n2. скопируйте её используя Wy\n3. Перейдите к символу после baseArea = и вставьте используя p\n4. Удалите остальную часть строки используя ;vgld или Ctrl-k",
+    "tags": [
+        "edit_yank_paste",
+        "edit_change"
+    ],
+    "author_time": 7.85
+}

@@ -1,0 +1,25 @@
+{
+    "id": "implement_interface_crossfile",
+    "title": "Implement interface across files",
+    "description": "Сделайте так, чтобы FileStore реализовал Saver: добавьте метод Save в service.go и обновите использование в основном файле.",
+    "difficulty": "Hard",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "service.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "service.go": "goal_service.go"
+    },
+    "tips": "1. Перейдите к interface Saver.\n2. Откройте реализацию FileStore в другом файле.\n3. Добавьте недостающий метод Save.\n4. Вернитесь в основной файл и убедитесь, что assign к Saver валиден.\n5. Сохраните оба файла.",
+    "tags": [
+        "lsp_definition",
+        "buffer_switch",
+        "edit_insert",
+        "edit_change"
+    ],
+    "author_time": 28.0
+}

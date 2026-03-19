@@ -1,0 +1,24 @@
+{
+    "id": "definition_edit_compare_back",
+    "title": "Definition edit and return",
+    "description": "Перейдите к определению buildURL, исправьте схему адреса и вернитесь к месту вызова.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "netutil.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "netutil.go": "goal_netutil.go"
+    },
+    "tips": "1. Поставьте курсор на buildURL.\n2. Перейдите к определению через 'gd'.\n3. Исправьте 'http//' на 'https://'.\n4. Вернитесь назад через jumplist и сохраните файлы.",
+    "tags": [
+        "lsp_definition",
+        "jumplist",
+        "edit_change"
+    ],
+    "author_time": 17.0
+}

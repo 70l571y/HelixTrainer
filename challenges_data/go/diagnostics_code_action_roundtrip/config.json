@@ -1,0 +1,17 @@
+{
+    "id": "diagnostics_code_action_roundtrip",
+    "title": "Diagnostics and code action roundtrip",
+    "description": "Перейдите по диагностике, добавьте недостающий import через code action и вернитесь в исходную точку.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Перейдите к diagnostic через '[d' или ']d'.\n2. Примените code action для добавления import strings.\n3. Вернитесь к месту старта через jumplist.\n4. Сохраните файл.",
+    "tags": [
+        "diagnostics_nav",
+        "lsp_code_action",
+        "jumplist"
+    ],
+    "author_time": 17.0
+}

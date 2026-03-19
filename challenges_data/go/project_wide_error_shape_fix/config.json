@@ -1,0 +1,26 @@
+{
+    "id": "project_wide_error_shape_fix",
+    "title": "Project-wide error shape fix",
+    "description": "Приведите три разных error-сообщения к одному формату 'error: <name>' в нескольких файлах.",
+    "difficulty": "Hard",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "extra_files": [
+        "service.go",
+        "worker.go"
+    ],
+    "validation": {
+        "challenge.go": "goal.go",
+        "service.go": "goal_service.go",
+        "worker.go": "goal_worker.go"
+    },
+    "tips": "1. Найдите все строки с разными error-форматами.\n2. Приведите их к виду 'error: <name>'.\n3. Работайте по всем файлам проекта.\n4. Сохраните итоговые файлы.",
+    "tags": [
+        "search_global",
+        "edit_change",
+        "buffer_switch"
+    ],
+    "author_time": 29.0
+}

@@ -1,0 +1,17 @@
+{
+    "id": "find_char_replace_repeat",
+    "title": "Find char and replace repeat",
+    "description": "Используйте f/t и короткую замену, чтобы превратить три круглые скобки в квадратные.",
+    "difficulty": "Easy",
+    "language": "go",
+    "judge_mode": "ignore_whitespace",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Найдите первую '(' через find.\n2. Замените открывающую и закрывающую скобки.\n3. Повторяйте find на следующих строках, не скролля по символам.\n4. Исправьте все три случая.",
+    "tags": [
+        "movement_find",
+        "edit_replace",
+        "repeat_find"
+    ],
+    "author_time": 11.0
+}

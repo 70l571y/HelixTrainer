@@ -1,0 +1,17 @@
+{
+    "id": "surround_delete_quotes",
+    "title": "Удаление кавычек",
+    "description": "Преобразуйте слайс строк в слайс целых чисел.",
+    "difficulty": "Medium",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Перейдите внутрь скобок.\n2. Нажмите 'mi[' для выделения содержимого.\n3. Нажмите 's\"' для выделения всех кавычек.\n4. Нажмите 'd' для удаления.",
+    "tags": [
+        "surround_delete",
+        "select_object",
+        "select_regex"
+    ],
+    "author_time": 10.29
+}

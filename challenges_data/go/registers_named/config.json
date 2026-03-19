@@ -1,0 +1,17 @@
+{
+    "id": "registers_named",
+    "title": "Именованные регистры",
+    "description": "Сохраните 3 функции в регистры 'a', 'b', 'c' и вставьте их в новом порядке: c, a, b.",
+    "difficulty": "Hard",
+    "language": "go",
+    "judge_mode": "go_ast",
+    "start_file": "start.go",
+    "goal_file": "goal.go",
+    "tips": "1. Выделите funcA (maf).\n2. Копируйте в регистр a: '\"' -> 'a' -> 'y'.\n3. Выделите funcB, копируйте в 'b': '\"' -> 'b' -> 'y'.\n4. Выделите funcC, копируйте в 'c'.\n5. Удалите все 3 функции (dd или d).\n6. Вставьте в порядке c, a, b: '\"' -> 'c' -> 'p', затем '\"' -> 'a' -> 'p', '\"' -> 'b' -> 'p'.",
+    "tags": [
+        "register",
+        "edit_yank_paste",
+        "select_object"
+    ],
+    "author_time": 35.0
+}
