@@ -2,6 +2,8 @@
 package app
 
 import (
+	"bufio"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -27,6 +29,7 @@ import (
 var (
 	challengesDir string
 	verbose       bool
+	resetAttempts = database.ResetAttempts
 )
 
 // InitCommands инициализирует все команды CLI.
@@ -37,6 +40,11 @@ func InitCommands(rootCmd *cobra.Command, cd string) {
 	rootCmd.AddCommand(listCmd)
 	rootCmd.AddCommand(statsCmd)
 	rootCmd.AddCommand(upgradeCmd)
+}
+
+func init() {
+	statsCmd.AddCommand(statsResetCmd)
+	_ = statsResetCmd.Flags().Bool("yes", false, "Подтвердить сброс без prompt")
 }
 
 // playCmd - команда для запуска челленджа.
@@ -61,6 +69,14 @@ var statsCmd = &cobra.Command{
 	Short: "Показать статистику прогресса",
 	Long:  "Показывает детальную статистику: последние попытки, лучшие времена, вехи.",
 	Run:   runStats,
+}
+
+var statsResetCmd = &cobra.Command{
+	Use:   "reset",
+	Short: "Сбросить статистику",
+	Long:  "Удаляет все попытки и рекорды из статистики после подтверждения. Подтвердить можно интерактивно или через --yes без интерактивного подтверждения.",
+	Args:  cobra.NoArgs,
+	RunE:  runStatsReset,
 }
 
 // upgradeCmd - команда для обновления.
@@ -297,12 +313,12 @@ func runPlay(cmd *cobra.Command, args []string) {
 		if isCorrect {
 			displayFeedback(feedbackContent, matchingGoal, judgeMode)
 
-			msg := text.Bold.Sprintf(text.FgGreen.Sprintf("Вы выполнили задание за %.2fс", duration))
+			msg := text.Bold.Sprintf("%s", text.FgGreen.Sprintf("Вы выполнили задание за %.2fс", duration))
 			if isNewRecord {
-				msg += text.Bold.Sprintf(text.FgYellow.Sprintf(" 🏆 Новый рекорд!"))
+				msg += text.Bold.Sprintf("%s", text.FgYellow.Sprintf(" 🏆 Новый рекорд!"))
 			}
 			if isNewMilestone {
-				msg += text.Bold.Sprintf(text.FgMagenta.Sprintf("\n🎉 Новая веха: %s %s!", ms.Symbol, ms.Name))
+				msg += text.Bold.Sprintf("%s", text.FgMagenta.Sprintf("\n🎉 Новая веха: %s %s!", ms.Symbol, ms.Name))
 			} else if ms.Name != "" {
 				msg += fmt.Sprintf(" [%s %s]", ms.Symbol, ms.Name)
 			}
@@ -313,7 +329,7 @@ func runPlay(cmd *cobra.Command, args []string) {
 				feedbackGoal = goalContents[0]
 			}
 			displayFeedback(feedbackContent, feedbackGoal, judgeMode)
-			fmt.Println(text.Bold.Sprintf(text.FgRed.Sprintf("❌ Не удалось. Время: %.2fс", duration)))
+			fmt.Println(text.Bold.Sprintf("%s", text.FgRed.Sprintf("❌ Не удалось. Время: %.2fс", duration)))
 		}
 
 		// Очистка временной директории после завершения проверки
@@ -371,8 +387,8 @@ func runList(cmd *cobra.Command, args []string) {
 		displayID := c.ID
 
 		if completedIDs[c.ID] {
-			displayID = text.FgGreen.Sprintf(c.ID)
-			status = text.Bold.Sprintf(text.FgGreen.Sprintf("Выполнено"))
+			displayID = text.FgGreen.Sprintf("%s", c.ID)
+			status = text.Bold.Sprintf("%s", text.FgGreen.Sprintf("Выполнено"))
 		}
 
 		labels := strings.Join(c.Tags, ", ")
@@ -384,6 +400,8 @@ func runList(cmd *cobra.Command, args []string) {
 }
 
 func runStats(cmd *cobra.Command, args []string) {
+	out := cmd.OutOrStdout()
+
 	if err := database.InitDB(); err != nil {
 		fmt.Fprintln(os.Stderr, text.FgRed.Sprintf("Ошибка инициализации БД: %v", err))
 		return
@@ -397,14 +415,14 @@ func runStats(cmd *cobra.Command, args []string) {
 	}
 
 	if len(attempts) == 0 {
-		fmt.Println(text.FgYellow.Sprintf("Попыток пока нет."))
+		fmt.Fprintln(out, text.FgYellow.Sprintf("Попыток пока нет."))
 		return
 	}
 
 	// Последние 20 попыток
-	fmt.Println(text.Bold.Sprintf("Последняя активность (20)"))
+	fmt.Fprintln(out, text.Bold.Sprintf("Последняя активность (20)"))
 	recentTable := table.NewWriter()
-	recentTable.SetOutputMirror(os.Stdout)
+	recentTable.SetOutputMirror(out)
 	recentTable.AppendHeader(table.Row{"Время", "Челлендж", "Результат", "Время"})
 
 	sort.Slice(attempts, func(i, j int) bool {
@@ -421,12 +439,12 @@ func runStats(cmd *cobra.Command, args []string) {
 		recentTable.AppendRow(table.Row{timeStr, a.ChallengeID, result, fmt.Sprintf("%.2fс", a.Duration)})
 	}
 	recentTable.Render()
-	fmt.Println()
+	fmt.Fprintln(out)
 
 	// Прогресс челленджей
-	fmt.Println(text.Bold.Sprintf("Прогресс челленджей"))
+	fmt.Fprintln(out, text.Bold.Sprintf("Прогресс челленджей"))
 	progressTable := table.NewWriter()
-	progressTable.SetOutputMirror(os.Stdout)
+	progressTable.SetOutputMirror(out)
 	progressTable.AppendHeader(table.Row{"Челлендж", "Статус", "Лучшее время", "Веха", "Попыток"})
 
 	// Группировка попыток по челленджам
@@ -460,14 +478,14 @@ func runStats(cmd *cobra.Command, args []string) {
 		msDisplay := "-"
 
 		if isCompleted {
-			status = text.Bold.Sprintf(text.FgGreen.Sprintf("Выполнено"))
+			status = text.Bold.Sprintf("%s", text.FgGreen.Sprintf("Выполнено"))
 			bestTime := float64(1e9)
 			for _, a := range successfulAttempts {
 				if a.Duration < bestTime {
 					bestTime = a.Duration
 				}
 			}
-			bestTimeStr = text.FgGreen.Sprintf(fmt.Sprintf("%.2fс", bestTime))
+			bestTimeStr = text.FgGreen.Sprintf("%s", fmt.Sprintf("%.2fс", bestTime))
 
 			ms := challenges.GetMilestone(bestTime, c.AuthorTime)
 			if ms.Name != "" {
@@ -514,6 +532,45 @@ func displayFeedback(userText, goalText, judgeMode string) {
 			fmt.Println(text.FgYellow.Sprintf("Примечание: Режим AST. Структура должна совпадать точно, но форматирование может отличаться."))
 		}
 	}
+}
+
+func runStatsReset(cmd *cobra.Command, args []string) error {
+	yes, _ := cmd.Flags().GetBool("yes")
+	if !yes {
+		confirmed, err := confirmStatsReset(cmd.InOrStdin(), cmd.OutOrStdout())
+		if err != nil {
+			return err
+		}
+		if !confirmed {
+			fmt.Fprintln(cmd.OutOrStdout(), "Сброс статистики отменён.")
+			return nil
+		}
+	}
+
+	removed, err := resetAttempts()
+	if err != nil {
+		return err
+	}
+
+	fmt.Fprintf(cmd.OutOrStdout(), "Удалено %d попыток из статистики.\n", removed)
+	return nil
+}
+
+func confirmStatsReset(in io.Reader, out io.Writer) (bool, error) {
+	fmt.Fprint(out, "Внимание: будут удалены все попытки и рекорды из статистики. Сбросить? [y/N]: ")
+
+	reader := bufio.NewReader(in)
+	line, err := reader.ReadString('\n')
+	if err != nil && err != io.EOF {
+		return false, err
+	}
+
+	answer := strings.ToLower(strings.TrimSpace(line))
+	if err == io.EOF && answer == "" {
+		return false, errors.New("подтверждение для сброса статистики не получено")
+	}
+
+	return answer == "y" || answer == "yes", nil
 }
 
 func copyFile(src, dst string) error {

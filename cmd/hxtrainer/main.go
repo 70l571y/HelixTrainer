@@ -18,14 +18,25 @@ var (
 	verbose bool
 )
 
-func main() {
-	var rootCmd = &cobra.Command{
+func newRootCommand(challengesDir string) *cobra.Command {
+	rootCmd := &cobra.Command{
 		Use:   "hxtrainer",
 		Short: "HelixTrainer - Тренажёр для редактора Helix",
 		Long: `HelixTrainer - интерактивный тренажёр для освоения редактора кода Helix.
 Решайте челленджи, отрабатывая навыки работы с Helix.`,
+		Example: `  hxtrainer play
+  hxtrainer stats
+  hxtrainer stats reset
+  hxtrainer stats reset --yes`,
 		Version: buildinfo.CurrentVersion(),
 	}
+
+	app.InitCommands(rootCmd, challengesDir)
+	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "Подробный вывод")
+	return rootCmd
+}
+
+func main() {
 
 	execPath, err := os.Executable()
 	if err != nil {
@@ -50,8 +61,7 @@ func main() {
 		challengesDir = cfg.GetChallengesDir()
 	}
 
-	app.InitCommands(rootCmd, challengesDir)
-	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "Подробный вывод")
+	rootCmd := newRootCommand(challengesDir)
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)

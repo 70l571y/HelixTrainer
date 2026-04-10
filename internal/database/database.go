@@ -23,33 +23,36 @@ type Attempt struct {
 }
 
 var (
-	db   *gorm.DB
-	once sync.Once
+	db     *gorm.DB
+	dbMu   sync.Mutex
 )
 
 // InitDB инициализирует базу данных и создаёт таблицы.
 func InitDB() error {
-	var initErr error
-	once.Do(func() {
-		dbPath := cfg.GetDBPath()
+	dbMu.Lock()
+	defer dbMu.Unlock()
 
-		// Создаём директорию если не существует
-		var err error
-		if err = ensureDir(dbPath); err != nil {
-			initErr = err
-			return
-		}
+	if db != nil {
+		return nil
+	}
 
-		dsn := "file:" + dbPath
-		db, err = gorm.Open(sqlite.Open(dsn), &gorm.Config{})
-		if err != nil {
-			initErr = err
-			return
-		}
+	dbPath := cfg.GetDBPath()
 
-		initErr = db.AutoMigrate(&Attempt{})
-	})
-	return initErr
+	if err := ensureDir(dbPath); err != nil {
+		return err
+	}
+
+	openedDB, err := gorm.Open(sqlite.Open("file:"+dbPath), &gorm.Config{})
+	if err != nil {
+		return err
+	}
+
+	if err := openedDB.AutoMigrate(&Attempt{}); err != nil {
+		return err
+	}
+
+	db = openedDB
+	return nil
 }
 
 // ensureDir создаёт директорию для файла если она не существует.
@@ -102,4 +105,14 @@ func GetAttemptsByChallenge(challengeID string) ([]Attempt, error) {
 // GetAllAttempts возвращает все попытки.
 func GetAllAttempts() ([]Attempt, error) {
 	return GetAttempts("")
+}
+
+// ResetAttempts удаляет все записи о попытках.
+func ResetAttempts() (int64, error) {
+	if err := InitDB(); err != nil {
+		return 0, err
+	}
+
+	result := db.Session(&gorm.Session{AllowGlobalUpdate: true}).Delete(&Attempt{})
+	return result.RowsAffected, result.Error
 }
