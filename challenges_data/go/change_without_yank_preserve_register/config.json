@@ -1,0 +1,17 @@
+{
+  "id": "change_without_yank_preserve_register",
+  "title": "Change without yank preserves register",
+  "description": "Скопируйте stable, превратите draft в stable-v2 через Alt-c без потери yank и затем тем же yank исправьте target.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Сначала сохраните 'stable' в yank/register.\n2. Измените 'draft' через 'Alt-c', чтобы не затереть yank.\n3. Введите stable-v2 вручную.\n4. Затем замените target сохранённым содержимым через 'R'.\nHelix-шпаргалка:\n- 'Alt-c' меняет selection без обновления yank/register.\n- 'R' заменяет текущее выделение содержимым yank/register.\n- Самый короткий путь здесь: Скопируйте stable -> Alt-c на draft -> введите stable-v2 -> R на target.",
+  "tags": [
+    "register",
+    "edit_change",
+    "edit_replace_yanked"
+  ],
+  "author_time": 11.0
+}

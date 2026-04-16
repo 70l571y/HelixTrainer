@@ -1,0 +1,18 @@
+{
+  "id": "window_split_current_compare_move",
+  "title": "Split current buffer for reference copy",
+  "description": "Разделите текущий буфер, сравните верхний config с нижним reference и перенесите правильные region и zone наверх.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Разделите текущий буфер через 'Ctrl-w v' или 'Ctrl-w s'.\n2. В верхнем окне оставьте config, в нижнем перейдите к referenceCluster.\n3. Скопируйте region и zone из нижнего блока.\n4. Перенесите их в верхние константы.\nHelix-шпаргалка:\n- 'Ctrl-w v' и 'Ctrl-w s' делят текущий буфер на два окна с одним файлом.\n- После split переходите между окнами через '<space>w' и затем 'h/j/k/l'.\n- 'y', 'p' и 'R' помогают быстро переносить значения между видимыми участками файла.\n- Самый короткий путь здесь: split current buffer -> дойдите до referenceCluster -> перенесите region и zone наверх.",
+  "tags": [
+    "window_split_current",
+    "window_move",
+    "edit_yank_paste",
+    "track_core_hotkey"
+  ],
+  "author_time": 21.0
+}

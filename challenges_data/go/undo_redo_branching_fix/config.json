@@ -1,0 +1,17 @@
+{
+  "id": "undo_redo_branching_fix",
+  "title": "Undo redo branching fix",
+  "description": "Исправьте две опечатки, один раз откатите неправильную правку через u/U и закончите на clean status line.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Исправьте servr -> server.\n2. Намеренно проверьте откат через 'u' и возврат через 'U'.\n3. Затем исправьте statred -> started и healt -> health.\n4. Сохраните итоговую строку.\nHelix-шпаргалка:\n- 'u' отменяет последнее изменение, 'U' возвращает его обратно.\n- Делайте undo/redo как часть edit loop, а не как аварийную кнопку.\n- Самый короткий путь здесь: правка -> u -> U -> дочистить оставшиеся опечатки.",
+  "tags": [
+    "undo_redo",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 13.0
+}

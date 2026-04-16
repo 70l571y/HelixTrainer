@@ -58,9 +58,13 @@
 
 ## LSP и диагностика
 *   `lsp_definition`: Переход к определению символа (gd).
+*   `lsp_declaration`: Переход к объявлению символа (gD).
 *   `lsp_references`: Переход или выбор ссылок на символ (gr, `<space>h`).
+*   `lsp_select_references`: Выбор всех references символа как selection (`<space>h`).
 *   `lsp_rename`: Переименование символа через LSP (`<space>r`).
 *   `lsp_code_action`: Применение code action (`<space>a`).
+*   `lsp_type_definition`: Переход к type definition символа (`gy`).
+*   `lsp_hover`: Просмотр hover-документации по символу (`<space>k`).
 *   `diagnostics_nav`: Навигация по диагностике (`[d`, `]d`).
 
 ## Окружение (Surround)
@@ -93,6 +97,12 @@
 ## Picker и навигация
 *   `picker_symbols`: Навигация по символам (<space>s).
 *   `picker_files`: Поиск файлов (<space>f).
+*   `picker_changed_files`: Навигация по изменённым git-файлам (<space>g).
 *   `picker_buffer`: Выбор буфера (<space>b).
 *   `picker_workspace_symbols`: Поиск символов по workspace (<space>S).
 *   `picker_diagnostics`: Переход по диагностике через picker (<space>d, <space>D).
+*   `command_palette`: Поиск и запуск команд через palette (<space>?).
+
+## Meta Track
+*   `track_core_hotkey`: Задача относится к основному hotkey-first progression track.
+*   `track_optional_command_line`: Задача относится к optional command-line track и сознательно тренирует `:`-workflow.

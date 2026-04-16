@@ -1,0 +1,16 @@
+{
+  "id": "number_increment_batch_tune",
+  "title": "Number increment batch tune",
+  "description": "Поднимите retries и batch_size через Ctrl-a, а timeout опустите через Ctrl-x.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Перейдите к retries и нажмите 'Ctrl-a'.\n2. На batch_size нажмите 'Ctrl-a' два раза.\n3. На timeout нажмите 'Ctrl-x'.\n4. Не редактируйте числа вручную.\nHelix-шпаргалка:\n- 'Ctrl-a' увеличивает число под курсором, 'Ctrl-x' уменьшает.\n- Для серии числовых правок это быстрее, чем change+insert.\n- Самый короткий путь здесь: Ctrl-a -> Ctrl-a Ctrl-a -> Ctrl-x.",
+  "tags": [
+    "number_increment",
+    "track_core_hotkey"
+  ],
+  "author_time": 9.0
+}

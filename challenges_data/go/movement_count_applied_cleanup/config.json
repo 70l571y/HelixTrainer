@@ -1,0 +1,18 @@
+{
+  "id": "movement_count_applied_cleanup",
+  "title": "Movement count applied cleanup",
+  "description": "Используйте счётчики движений, чтобы быстро дойти до двух marked полей и исправить их без лишнего скролла.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Начните с начала файла.\n2. Используйте счётчики по строкам или словам, чтобы быстро попасть к alpha_port и gamma_mode.\n3. Исправьте 7000 -> 9000 и drafr -> draft.\n4. Не идите до целей только одиночными движениями.\nHelix-шпаргалка:\n- Перед движением можно ставить счётчик: '12j', '3w', '2W'.\n- Счётчик полезен, когда правки лежат на предсказуемых смещениях.\n- Самый короткий путь здесь: счётчик к alpha_port -> правка -> счётчик к gamma_mode -> правка.",
+  "tags": [
+    "movement_count",
+    "movement_goto",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 14.0
+}

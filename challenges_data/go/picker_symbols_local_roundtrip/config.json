@@ -1,0 +1,17 @@
+{
+  "id": "picker_symbols_local_roundtrip",
+  "title": "Symbols picker local roundtrip",
+  "description": "Откройте symbols picker текущего файла, перейдите к buildFooter и исправьте его имя на buildBannerFooter, затем обновите вызов.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Откройте symbols picker текущего файла через '<space>s'.\n2. Найдите buildFooter и перейдите к символу.\n3. Исправьте имя функции на buildBannerFooter.\n4. Обновите вызов в main и сохраните файл.\nHelix-шпаргалка:\n- '<space>s' ищет symbols в текущем буфере быстрее, чем ручной скролл.\n- 'c' меняет текущий selection и сразу переводит в insert mode.\n- После правки вернитесь к вызову через поиск, history или второй symbols pick.\n- Самый короткий путь здесь: <space>s -> buildFooter -> rename -> обновить вызов.",
+  "tags": [
+    "picker_symbols",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 16.0
+}

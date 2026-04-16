@@ -1,0 +1,17 @@
+{
+  "id": "movement_jump_label_followup",
+  "title": "Jump label follow-up target",
+  "description": "Используйте gw, чтобы быстро прыгнуть к buildFooterLabel в длинном файле и исправить Footer -> Banner.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Останьтесь в верхней части файла.\n2. Нажмите 'gw' и введите двухсимвольную метку у buildFooterLabel.\n3. Исправьте имя на buildBannerLabel.\n4. Обновите вызов и сохраните файл.\nHelix-шпаргалка:\n- 'gw' полезен, когда цель далеко, но уже видна в окне.\n- После jump-label правьте символ сразу, не скролля обратно вручную.\n- Самый короткий путь здесь: gw -> buildFooterLabel -> rename -> обновить вызов.",
+  "tags": [
+    "movement_jump_label",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 15.0
+}

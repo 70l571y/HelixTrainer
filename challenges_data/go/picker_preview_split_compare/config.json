@@ -1,0 +1,26 @@
+{
+  "id": "picker_preview_split_compare",
+  "title": "Picker preview open in split",
+  "description": "Откройте reference.go из file picker сразу в split через Ctrl-v или Ctrl-s, сравните значение и перенесите его в основной буфер.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "reference.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "reference.go": "goal_reference.go"
+  },
+  "tips": "1. Откройте file picker через '<space>f'.\n2. Выберите reference.go и откройте его сразу в split через 'Ctrl-v' или 'Ctrl-s'.\n3. Сравните значение region.\n4. Перенесите правильное значение в основной буфер.\n5. Сохраните оба файла.\nHelix-шпаргалка:\n- В file picker 'Ctrl-v' и 'Ctrl-s' открывают выбранный файл сразу в split.\n- После split переходите между окнами через '<space>w' и затем 'h/j/k/l'.\n- Самый короткий путь здесь: <space>f -> reference.go -> Ctrl-v -> сравнить -> перенести значение.",
+  "tags": [
+    "picker_files",
+    "window_split",
+    "window_move",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 18.0
+}

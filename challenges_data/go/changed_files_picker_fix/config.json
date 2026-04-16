@@ -1,0 +1,28 @@
+{
+  "id": "changed_files_picker_fix",
+  "title": "Changed files picker",
+  "description": "Откройте changed file picker, перейдите в уже изменённый helper.go и исправьте label с stale на ready.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "git_dirty_files": {
+    "helper.go": "dirty_helper.go"
+  },
+  "tips": "1. Откройте changed files picker через '<space>g'.\n2. Выберите helper.go из списка изменённых файлов.\n3. Исправьте label с stale на ready.\n4. Сохраните helper.go и основной файл.\nHelix-шпаргалка:\n- '<space>g' открывает picker изменённых git-файлов.\n- Через changed files picker быстрее всего попасть в уже dirty buffer.\n- 'c' меняет текущий selection и сразу переводит в insert mode.\n- Самый короткий путь здесь: <space>g -> helper.go -> stale -> ready -> сохранить.",
+  "tags": [
+    "picker_changed_files",
+    "buffer_switch",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 12.0
+}

@@ -52,12 +52,16 @@ challenges_data/
     "language": "go",
     "judge_mode": "go_ast" | "exact" | "ignore_whitespace",
     "start_file": "start.go",
+    "main_file_name": "challenge.go",
     "goal_file": "goal.go",
     "goal_files": ["goal.go"],
     "extra_files": ["service.go", "report.go"],
     "validation": {
         "challenge.go": "goal.go",
         "service.go": "goal_service.go"
+    },
+    "git_dirty_files": {
+        "helper.go": "dirty_helper.go"
     },
     "tips": "Пошаговые подсказки с командами Helix.\nДержите строки < 80 символов.\nИспользуйте \\n для новых строк.",
     "tags": [
@@ -80,6 +84,12 @@ challenges_data/
     *   `"exact"`: Посимвольное сравнение. Самый сложный режим.
     *   `"ignore_whitespace"`: Удаляет пробелы перед сравнением. Хорошо для манипуляций с текстом.
 *   **`goal_file`**: Основной goal-файл для single-file сценария.
+*   **`main_file_name`**: Необязательное имя основного файла во временной
+    директории challenge-а. По умолчанию рантайм создаёт `challenge.go`
+    (или файл с тем же расширением, что у `start_file`). Используйте это
+    поле для сценариев, где имя основного файла само является частью
+    workflow-а или требуется для более правдоподобного multi-file layout,
+    например `matrix_processor.go`.
 *   **`goal_files`**: Альтернативные goal-файлы для одного и того же
     основного буфера, если вы хотите разрешить несколько корректных
     состояний.
@@ -89,10 +99,21 @@ challenges_data/
     Ключ - имя файла во временной директории, значение - goal-файл внутри
     challenge directory. Используйте этот режим, если важны изменения
     сразу в нескольких файлах.
+*   **`git_dirty_files`**: Необязательная карта для challenge-ов,
+    которым нужен dirty git workspace с самого старта. Ключ - имя файла
+    во временной директории, значение - fixture-файл внутри challenge
+    directory, который будет записан поверх committed baseline после
+    `git init` и первого commit. Это полезно для `changed file picker`
+    сценариев.
 *   **`tips`**: Строка, содержащая подсказки.
     *   **Форматирование**: Используйте `\n` для разрывов строк.
     *   **Ограничение**: Держите строки **< 80 символов** для предотвращения проблем с переносом терминала.
     *   **Содержание**: Явно упоминайте клавиши Helix. Обучайте наиболее эффективному/идиоматичному методу (например, используйте `mr` для замены скобок, а не удаление+вставка).
+    *   **Официальные no-yank команды**: для modern Helix prefer
+        documented shortcuts `Alt-d` и `Alt-c`, если задача тренирует
+        delete/change without yank как действие. Нотацию `"_d` и `"_c`
+        используйте там, где challenge именно про registers и blackhole
+        register, а не просто про “не затирать yank”.
     *   **Для core hotkey challenge-ов**: если у Helix есть официальный
         default binding, пишите его в tips явно. Не заменяйте конкретный
         хоткей расплывчатым “через hotkey-driven путь”.
@@ -173,6 +194,10 @@ challenges_data/
 6.  **Идиоматичный Helix**:
     *   Обучайте "способу Helix". Если задача может быть выполнена с помощью `mr` (match replace), не обучайте `d` затем `i`.
     *   Если подсказка использует конкретную функцию (например, `s` для regex-выделения), убедитесь, что соответствующий тег (`select_regex`) присутствует в `config.json`.
+    *   Если в official keymap уже есть dedicated hotkey для действия,
+        предпочитайте его прямое обучение. Примеры: `Alt-d` вместо
+        register workaround для no-yank delete, `<space>R` для clipboard
+        replace, `Ctrl-s` / `Ctrl-v` в picker для split-open.
 
 7.  **Стратегия выделения**:
     *   **Избегайте `%`**: В игровой среде файл включает внедрённый заголовок и футер с подсказками. Использование `%` выделяет эти артефакты, что ломает многие команды трансформации.
@@ -223,6 +248,9 @@ challenges_data/
 *   **Случайный command-line drift**: Если challenge должен тренировать
     hotkeys, не пишите tips в стиле `:o`, `:vs`, `:buffer-next`, если
     тот же сценарий можно выполнить через picker/window/buffer hotkeys.
+*   **Реестр тегов отстал от challenge-ов**: если вы добавили новый
+    challenge-tag в `config.json`, но не описали его в
+    `docs/HelixLabels.md`, считайте это ошибкой набора данных.
 
 ## 🗺️ Покрытие функций
 

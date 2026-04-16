@@ -1,0 +1,28 @@
+{
+  "id": "command_palette_reopen_picker",
+  "title": "Command palette reopens picker",
+  "description": "Откройте file picker, затем через command palette повторно вызовите last_picker и перейдите в helper.go, чтобы исправить строку.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go",
+    "other.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go",
+    "other.go": "goal_other.go"
+  },
+  "tips": "1. Откройте file picker через '<space>f' и посетите другой файл.\n2. Откройте command palette через '<space>?'.\n3. Найдите команду last_picker и подтвердите её.\n4. Из reopened picker перейдите в helper.go и исправьте строку.\n5. Сохраните все файлы.\nHelix-шпаргалка:\n- '<space>?' открывает command palette и позволяет запускать editor-команды по имени.\n- Команда last_picker возвращает последний picker без ручного повторного набора.\n- '<space>f' нужен только для первого открытия picker-сессии.\n- Самый короткий путь здесь: <space>f -> посетить файл -> <space>? -> last_picker -> helper.go -> правка.",
+  "tags": [
+    "command_palette",
+    "picker_files",
+    "buffer_switch",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 20.0
+}

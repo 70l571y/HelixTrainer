@@ -1,0 +1,27 @@
+{
+  "id": "buffer_picker_history_reopen",
+  "title": "Buffer picker and history reopen",
+  "description": "Откройте helper.go и notes.go, исправьте helper через buffer picker и вернитесь в основной буфер через history, чтобы обновить вызов.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go",
+    "notes.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go",
+    "notes.go": "goal_notes.go"
+  },
+  "tips": "1. Откройте helper.go и notes.go через '<space>f'.\n2. Через '<space>b' выберите helper.go и исправьте helperName.\n3. Вернитесь в основной буфер через 'ga' или picker/history.\n4. Обновите вызов helperName -> helperLabel.\n5. Сохраните файлы.\nHelix-шпаргалка:\n- '<space>b' быстро открывает уже посещённые буферы.\n- 'ga' возвращает к last accessed file после правки в другом буфере.\n- 'c' меняет текущий selection и полезен для коротких rename-подобных правок.\n- Самый короткий путь здесь: откройте helper.go -> <space>b в helper -> ga назад -> исправьте вызов.",
+  "tags": [
+    "picker_buffer",
+    "buffer_switch",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 18.0
+}

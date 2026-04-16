@@ -1,0 +1,18 @@
+{
+  "id": "selection_reset_edit_cycle",
+  "title": "Selection reset edit cycle",
+  "description": "Разбейте строки на фразы, сверните выделения до курсоров и замените первые буквы фраз на заглавные через selection reset.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите две строки.\n2. Разделите их по разделителю '; ' через 'S'.\n3. 'Alt-;' чтобы вернуть полные selection, затем ';' чтобы свернуть до курсоров.\n4. Поднимите первые буквы в upper case.\nHelix-шпаргалка:\n- 'S' делит selection по regex-разделителю.\n- 'Alt-;' расширяет selection обратно, ';' сворачивает до курсоров.\n- Самый короткий путь здесь: 2x -> S -> '; ' -> Alt-; -> ; -> Alt-`.",
+  "tags": [
+    "selection_reset",
+    "select_split_regex",
+    "edit_case",
+    "track_core_hotkey"
+  ],
+  "author_time": 17.0
+}

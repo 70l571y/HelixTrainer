@@ -1,0 +1,25 @@
+{
+  "id": "picker_global_search_register_query",
+  "title": "Global search query from register",
+  "description": "Возьмите legacy_token из текущего буфера, подставьте его в global search через Ctrl-r и обновите token в обоих файлах до active_token.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Выделите legacy_token в текущем файле.\n2. Откройте global search через '<space>/'.\n3. В prompt нажмите 'Ctrl-r', затем '.', чтобы вставить current selection как запрос.\n4. Перейдите к совпадению в helper.go и обновите token до active_token.\n5. Исправьте и текущий файл, затем сохраните оба файла.\nHelix-шпаргалка:\n- '<space>/' открывает global search по workspace.\n- В picker/prompt можно вставить register через 'Ctrl-r' и имя регистра.\n- '.' - регистр текущего selection; это быстрее, чем печатать запрос заново.\n- Самый короткий путь здесь: Выделите legacy_token -> <space>/ -> Ctrl-r . -> исправьте helper.go -> исправьте текущий файл.",
+  "tags": [
+    "search_global",
+    "register",
+    "buffer_switch",
+    "track_core_hotkey"
+  ],
+  "author_time": 18.0
+}

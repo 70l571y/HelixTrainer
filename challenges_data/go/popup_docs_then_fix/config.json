@@ -1,0 +1,25 @@
+{
+  "id": "popup_docs_then_fix",
+  "title": "Hover docs then fix",
+  "description": "Откройте hover-документацию для BuildBanner, затем перейдите к определению и исправьте префикс с bannre на banner.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Поставьте курсор на BuildBanner в вызове.\n2. Откройте hover через '<space>k' и прочитайте doc comment.\n3. Перейдите к определению через 'gd'.\n4. Исправьте префикс bannre на banner.\n5. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>k' открывает hover popup с документацией по символу.\n- В длинном popup можно прокручивать через 'Ctrl-u' и 'Ctrl-d'.\n- 'gd' прыгает к определению символа под курсором.\n- Самый короткий путь здесь: hover на BuildBanner -> gd -> bannre -> banner.",
+  "tags": [
+    "lsp_hover",
+    "lsp_definition",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 18.0
+}

@@ -3,9 +3,13 @@ package app
 import (
 	"bytes"
 	"fmt"
+	"os"
+	"os/exec"
+	"path/filepath"
 	"strings"
 	"testing"
 
+	"github.com/70l571y/HelixTrainer/internal/challenges"
 	"github.com/spf13/cobra"
 )
 
@@ -249,5 +253,65 @@ func TestStatsResetHelpShowsYesFlag(t *testing.T) {
 	}
 	if !strings.Contains(got, "--yes") {
 		t.Fatalf("help output = %q, want yes flag", got)
+	}
+}
+
+func TestChallengeMainFileName(t *testing.T) {
+	t.Run("defaults to challenge plus extension", func(t *testing.T) {
+		challenge := challenges.Challenge{StartPath: "/tmp/start.go"}
+
+		if got := challengeMainFileName(challenge); got != "challenge.go" {
+			t.Fatalf("challengeMainFileName() = %q, want %q", got, "challenge.go")
+		}
+	})
+
+	t.Run("uses configured main file name", func(t *testing.T) {
+		challenge := challenges.Challenge{
+			StartPath:    "/tmp/start.go",
+			MainFileName: "matrix_processor.go",
+		}
+
+		if got := challengeMainFileName(challenge); got != "matrix_processor.go" {
+			t.Fatalf("challengeMainFileName() = %q, want %q", got, "matrix_processor.go")
+		}
+	})
+}
+
+func TestPrepareGitWorkspaceAppliesDirtyFiles(t *testing.T) {
+	if _, err := exec.LookPath("git"); err != nil {
+		t.Skip("git not installed")
+	}
+
+	challengeDir := t.TempDir()
+	tmpDir := t.TempDir()
+
+	challenge := challenges.Challenge{
+		ID:           "git_dirty_workspace",
+		Description:  "Dirty workspace",
+		Language:     "go",
+		DirPath:      challengeDir,
+		GitDirtyFiles: map[string]string{
+			"helper.go": "dirty_helper.go",
+		},
+	}
+
+	targetPath := filepath.Join(tmpDir, "helper.go")
+	if err := os.WriteFile(targetPath, []byte("clean\n"), 0644); err != nil {
+		t.Fatalf("WriteFile(clean) error = %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(challengeDir, "dirty_helper.go"), []byte("dirty\n"), 0644); err != nil {
+		t.Fatalf("WriteFile(dirty fixture) error = %v", err)
+	}
+
+	if err := prepareGitWorkspace(challenge, tmpDir, "challenge.go"); err != nil {
+		t.Fatalf("prepareGitWorkspace() error = %v", err)
+	}
+
+	content, err := os.ReadFile(targetPath)
+	if err != nil {
+		t.Fatalf("ReadFile(target) error = %v", err)
+	}
+	if got := string(content); got != "dirty\n" {
+		t.Fatalf("target content = %q, want %q", got, "dirty\n")
 	}
 }

@@ -20,6 +20,7 @@ type Challenge struct {
 	Language       string            `json:"language"`
 	JudgeMode      string            `json:"judge_mode"`
 	StartFile      string            `json:"start_file"`
+	MainFileName   string            `json:"main_file_name"`
 	GoalFile       string            `json:"goal_file"`
 	GoalFiles      []string          `json:"goal_files"`
 	Tips           string            `json:"tips"`
@@ -27,6 +28,7 @@ type Challenge struct {
 	AuthorTime     float64           `json:"author_time"`
 	ExtraFiles     []string          `json:"extra_files"`
 	Validation     map[string]string `json:"validation"`
+	GitDirtyFiles  map[string]string `json:"git_dirty_files"`
 	DirPath        string            `json:"-"`
 	StartPath      string            `json:"-"`
 	GoalPaths      []string          `json:"-"`

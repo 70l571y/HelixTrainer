@@ -1,0 +1,16 @@
+{
+  "id": "clipboard_replace_selection",
+  "title": "Clipboard replace selection",
+  "description": "Скопируйте строку token: alpha в системный clipboard и замените строку token: beta через <space>R.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Выделите строку 'token: alpha'.\n2. Нажмите '<space>y' или '<space>Y' для clipboard copy.\n3. Выделите строку 'token: beta'.\n4. Нажмите '<space>R' для clipboard replace.\nHelix-шпаргалка:\n- '<space>R' заменяет selection содержимым системного clipboard.\n- '<space>y' и '<space>Y' копируют в clipboard.\n- 'x' выделяет строку; счётчик работает как '2x' для двух строк.\n- Самый короткий путь здесь: Выделите alpha -> clipboard copy -> выделите beta -> <space>R.",
+  "tags": [
+    "clipboard_system",
+    "select_line"
+  ],
+  "author_time": 8.0
+}

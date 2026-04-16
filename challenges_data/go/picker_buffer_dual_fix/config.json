@@ -1,0 +1,28 @@
+{
+  "id": "picker_buffer_dual_fix",
+  "title": "Buffer picker dual fix",
+  "description": "Откройте api.go и worker.go, затем через buffer picker по очереди исправьте stage и mode в обоих буферах.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "api.go",
+    "worker.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "api.go": "goal_api.go",
+    "worker.go": "goal_worker.go"
+  },
+  "tips": "1. Откройте api.go и worker.go через '<space>f'.\n2. Откройте picker буферов через '<space>b'.\n3. Перейдите в api.go и исправьте stage.\n4. Снова через '<space>b' перейдите в worker.go и исправьте mode.\n5. Сохраните все файлы.\nHelix-шпаргалка:\n- '<space>b' показывает уже открытые буферы и быстро прыгает между ними.\n- '<space>f' нужен только чтобы впервые открыть файлы; дальше используйте buffer picker.\n- 'c' меняет текущий selection и сразу переводит в insert mode.\n- Самый короткий путь здесь: откройте два файла -> <space>b в api.go -> <space>b в worker.go -> сохранить.",
+  "tags": [
+    "picker_buffer",
+    "buffer_open",
+    "buffer_switch",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 19.0
+}

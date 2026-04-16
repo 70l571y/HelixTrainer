@@ -1,0 +1,17 @@
+{
+  "id": "edit_open_line_steps",
+  "title": "Open line step insertion",
+  "description": "Добавьте before и after шаги вокруг строки deploy через O и o.",
+  "difficulty": "Easy",
+  "language": "go",
+  "judge_mode": "ignore_whitespace",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Перейдите к строке deploy.\n2. Нажмите 'O' и добавьте step: prepare.\n3. Вернитесь на deploy и нажмите 'o' для step: verify.\n4. Сохраните порядок строк.\nHelix-шпаргалка:\n- 'O' открывает строку выше, 'o' - строку ниже.\n- Эти команды полезны, когда нужно быстро обернуть существующую строку соседними шагами.\n- Самый короткий путь здесь: O -> prepare -> o -> verify.",
+  "tags": [
+    "edit_open_line",
+    "edit_insert",
+    "track_core_hotkey"
+  ],
+  "author_time": 8.5
+}

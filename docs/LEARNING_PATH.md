@@ -34,6 +34,8 @@
 - optional command-line track остаётся как справочный и дополнительный
 - дальнейшая работа должна быть направлена на refinement, а не на поиск
   крупных пробелов в core usage
+- track-метки `track_core_hotkey` и `track_optional_command_line`
+  используются как metadata для progression и не заменяют feature-tags
 
 ## Core Mental Models
 

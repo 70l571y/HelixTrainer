@@ -1,0 +1,25 @@
+{
+  "id": "rename_symbol_two_hop",
+  "title": "Rename symbol with follow-up cleanup",
+  "description": "Переименуйте BuildBadge в BuildBanner через LSP rename, затем проверьте оба файла и вручную исправьте строковый label на banner.",
+  "difficulty": "Hard",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "service.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "service.go": "goal_service.go"
+  },
+  "tips": "1. Поставьте курсор на BuildBadge в вызове или определении.\n2. Запустите '<space>r' и переименуйте символ в BuildBanner.\n3. Переключитесь на второй файл и проверьте все изменённые места.\n4. Вручную поправьте строковый label с badge на banner.\n5. Сохраните оба файла.\nHelix-шпаргалка:\n- '<space>r' делает LSP rename по проекту.\n- '<space>b' помогает быстро перепрыгивать между буферами после rename.\n- 'c' меняет текущий selection и полезен для ручной дочистки строкового литерала.\n- Самый короткий путь здесь: rename через <space>r -> buffer switch -> вручную дочистить label.",
+  "tags": [
+    "lsp_rename",
+    "buffer_switch",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 24.0
+}

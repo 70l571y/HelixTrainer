@@ -1,0 +1,18 @@
+{
+  "id": "select_cursor_applied_refactor",
+  "title": "Select cursor applied refactor",
+  "description": "Используйте C и несколько курсоров, чтобы заменить суффикс _tmp на _prod в вертикальном столбце переменных.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "tips": "1. Поставьте курсор на первую подстроку '_tmp'.\n2. Выделите её и размножьте selection вниз через 'C'.\n3. Исправьте все выделения сразу на '_prod'.\n4. Не трогайте строку commentTmp.\nHelix-шпаргалка:\n- 'C' копирует текущее selection вниз и строит вертикальный stack курсоров.\n- Несколько selection в Helix редактируются одной командой 'c' или 'r'.\n- Самый короткий путь здесь: выделить _tmp -> C вниз -> c -> _prod.",
+  "tags": [
+    "select_cursor",
+    "multicursor",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 15.0
+}

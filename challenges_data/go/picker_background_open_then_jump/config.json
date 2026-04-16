@@ -1,0 +1,26 @@
+{
+  "id": "picker_background_open_then_jump",
+  "title": "Picker background open then jump",
+  "description": "Откройте helper.go из file picker в фоне через Alt-Enter или Ctrl-t, затем найдите его через buffer picker и исправьте строку.",
+  "difficulty": "Medium",
+  "language": "go",
+  "judge_mode": "go_ast",
+  "start_file": "start.go",
+  "goal_file": "goal.go",
+  "extra_files": [
+    "helper.go"
+  ],
+  "validation": {
+    "challenge.go": "goal.go",
+    "helper.go": "goal_helper.go"
+  },
+  "tips": "1. Откройте file picker через '<space>f'.\n2. Выберите helper.go и откройте его в фоне через 'Alt-Enter' или 'Ctrl-t'.\n3. Перейдите в helper.go через '<space>b'.\n4. Исправьте status с cold на warm.\n5. Сохраните оба файла.\nHelix-шпаргалка:\n- В picker 'Alt-Enter' и 'Ctrl-t' позволяют открыть файл без немедленного переключения фокуса.\n- '<space>b' помогает быстро забрать уже открытый в фоне буфер.\n- Самый короткий путь здесь: <space>f -> helper.go -> Alt-Enter -> <space>b -> helper.go -> правка.",
+  "tags": [
+    "picker_files",
+    "picker_buffer",
+    "buffer_switch",
+    "edit_change",
+    "track_core_hotkey"
+  ],
+  "author_time": 19.0
+}

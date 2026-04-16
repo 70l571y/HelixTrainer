@@ -8,6 +8,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"sort"
@@ -168,11 +169,7 @@ func runPlay(cmd *cobra.Command, args []string) {
 		}
 
 		// Определяем имя основного файла
-		ext := filepath.Ext(selected.StartPath)
-		if ext == "" {
-			ext = ".go"
-		}
-		mainFileName := "challenge" + ext
+		mainFileName := challengeMainFileName(selected)
 		tmpFilePath := filepath.Join(tmpDir, mainFileName)
 
 		// Записываем файл
@@ -188,6 +185,12 @@ func runPlay(cmd *cobra.Command, args []string) {
 				destPath := filepath.Join(tmpDir, filepath.Base(extraPath))
 				copyFile(extraPath, destPath)
 			}
+		}
+
+		if err := prepareGitWorkspace(selected, tmpDir, mainFileName); err != nil {
+			fmt.Fprintln(os.Stderr, text.FgRed.Sprintf("Ошибка подготовки git workspace: %v", err))
+			os.RemoveAll(tmpDir)
+			return
 		}
 
 		startTime := time.Now()
@@ -354,6 +357,64 @@ func runPlay(cmd *cobra.Command, args []string) {
 			// иначе игнорируем
 		}
 	}
+}
+
+func challengeMainFileName(challenge challenges.Challenge) string {
+	if strings.TrimSpace(challenge.MainFileName) != "" {
+		return challenge.MainFileName
+	}
+
+	ext := filepath.Ext(challenge.StartPath)
+	if ext == "" {
+		ext = ".go"
+	}
+
+	return "challenge" + ext
+}
+
+func prepareGitWorkspace(challenge challenges.Challenge, tmpDir, mainFileName string) error {
+	if len(challenge.GitDirtyFiles) == 0 {
+		return nil
+	}
+
+	if _, err := exec.LookPath("git"); err != nil {
+		return nil
+	}
+
+	gitCommands := [][]string{
+		{"init", "-q"},
+		{"config", "user.name", "HelixTrainer"},
+		{"config", "user.email", "hxtrainer@example.invalid"},
+		{"add", "."},
+		{"commit", "-q", "-m", "challenge baseline"},
+	}
+
+	for _, args := range gitCommands {
+		cmd := exec.Command("git", args...)
+		cmd.Dir = tmpDir
+		if err := cmd.Run(); err != nil {
+			return fmt.Errorf("git %s: %w", strings.Join(args, " "), err)
+		}
+	}
+
+	for targetFile, sourceFixture := range challenge.GitDirtyFiles {
+		sourcePath := filepath.Join(challenge.DirPath, sourceFixture)
+		content, err := os.ReadFile(sourcePath)
+		if err != nil {
+			return fmt.Errorf("read dirty fixture %q: %w", sourcePath, err)
+		}
+
+		targetPath := filepath.Join(tmpDir, targetFile)
+		if targetFile == mainFileName {
+			content = []byte(challenges.BuildFileContent(challenge, string(content)))
+		}
+
+		if err := os.WriteFile(targetPath, content, 0644); err != nil {
+			return fmt.Errorf("write dirty file %q: %w", targetPath, err)
+		}
+	}
+
+	return nil
 }
 
 func runList(cmd *cobra.Command, args []string) {
