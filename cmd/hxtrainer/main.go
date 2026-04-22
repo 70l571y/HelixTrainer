@@ -25,9 +25,18 @@ func newRootCommand(challengesDir string) *cobra.Command {
 		Long: `HelixTrainer - интерактивный тренажёр для освоения редактора кода Helix.
 Решайте челленджи, отрабатывая навыки работы с Helix.`,
 		Example: `  hxtrainer play
+  hxtrainer play --track core --strategy weak-skills
+  hxtrainer list --tag movement_basic
+  hxtrainer list --json
   hxtrainer stats
+  hxtrainer stats --difficulty medium
+  hxtrainer stats export attempts.json
+  hxtrainer history hello_world --json
+  hxtrainer queue --strategy weak-skills
   hxtrainer stats reset
-  hxtrainer stats reset --yes`,
+  hxtrainer stats reset --yes
+  hxtrainer doctor
+  hxtrainer completion bash`,
 		Version: buildinfo.CurrentVersion(),
 	}
 

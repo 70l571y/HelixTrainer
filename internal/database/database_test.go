@@ -2,6 +2,7 @@ package database
 
 import (
 	"os"
+	"runtime"
 	"testing"
 )
 
@@ -16,6 +17,9 @@ func TestResetAttemptsClearsAttemptsAndReturnsCount(t *testing.T) {
 
 	if err := InitDB(); err != nil {
 		t.Fatalf("InitDB() error = %v", err)
+	}
+	if _, err := ResetAttempts(); err != nil {
+		t.Fatalf("ResetAttempts(initial) error = %v", err)
 	}
 
 	if _, err := LogAttempt("alpha", true, 1.5); err != nil {
@@ -57,13 +61,27 @@ func TestInitDBCanRecoverAfterInitialFailure(t *testing.T) {
 	if err := os.WriteFile(blocker, []byte("x"), 0644); err != nil {
 		t.Fatalf("WriteFile() error = %v", err)
 	}
-	t.Setenv("XDG_CONFIG_HOME", blocker)
+
+	switch runtime.GOOS {
+	case "windows":
+		t.Setenv("APPDATA", blocker)
+	default:
+		t.Setenv("HOME", blocker)
+		t.Setenv("XDG_CONFIG_HOME", blocker)
+	}
 
 	if err := InitDB(); err == nil {
 		t.Fatal("InitDB() error = nil, want initial failure")
 	}
 
-	t.Setenv("XDG_CONFIG_HOME", t.TempDir())
+	switch runtime.GOOS {
+	case "windows":
+		t.Setenv("APPDATA", t.TempDir())
+	default:
+		homeDir := t.TempDir()
+		t.Setenv("HOME", homeDir)
+		t.Setenv("XDG_CONFIG_HOME", t.TempDir())
+	}
 
 	if err := InitDB(); err != nil {
 		t.Fatalf("second InitDB() error = %v, want recovery after failure", err)

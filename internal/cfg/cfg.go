@@ -10,6 +10,8 @@ import (
 )
 
 const (
+	appName = "hxtrainer"
+
 	// RepoURL - URL репозитория GitHub.
 	RepoURL = "https://github.com/70l571y/HelixTrainer.git"
 
@@ -22,25 +24,29 @@ const (
 
 // GetConfigDir возвращает платформо-зависимую директорию конфигурации.
 func GetConfigDir() string {
-	appName := "hxtrainer"
+	base, err := os.UserConfigDir()
+	if err == nil && base != "" {
+		return configDirFromBase(base)
+	}
 
-	switch runtime.GOOS {
+	home, _ := os.UserHomeDir()
+	return configDirFromBase(fallbackConfigBase(runtime.GOOS, home))
+}
+
+func configDirFromBase(base string) string {
+	return filepath.Join(base, appName)
+}
+
+func fallbackConfigBase(goos, home string) string {
+	if home == "" {
+		return "." + appName
+	}
+
+	switch goos {
 	case "windows":
-		// Windows: %APPDATA%/hxtrainer
-		appData := os.Getenv("APPDATA")
-		if appData != "" {
-			return filepath.Join(appData, appName)
-		}
-		home, _ := os.UserHomeDir()
-		return filepath.Join(home, "."+appName)
+		return home
 	default:
-		// macOS / Linux: ~/.config/hxtrainer или XDG_CONFIG_HOME
-		xdgConfig := os.Getenv("XDG_CONFIG_HOME")
-		if xdgConfig != "" {
-			return filepath.Join(xdgConfig, appName)
-		}
-		home, _ := os.UserHomeDir()
-		return filepath.Join(home, ".config", appName)
+		return filepath.Join(home, ".config")
 	}
 }
 

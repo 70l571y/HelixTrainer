@@ -25,4 +25,10 @@ func TestRootHelpShowsStatsResetExamples(t *testing.T) {
 	if !strings.Contains(help, "hxtrainer stats reset --yes") {
 		t.Fatalf("root help = %q, want stats reset --yes example", help)
 	}
+	if !strings.Contains(help, "hxtrainer doctor") {
+		t.Fatalf("root help = %q, want doctor example", help)
+	}
+	if !strings.Contains(help, "hxtrainer completion bash") {
+		t.Fatalf("root help = %q, want completion example", help)
+	}
 }

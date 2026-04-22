@@ -2,6 +2,8 @@
 package database
 
 import (
+	"encoding/json"
+	"io"
 	"os"
 	"path/filepath"
 	"sync"
@@ -23,8 +25,8 @@ type Attempt struct {
 }
 
 var (
-	db     *gorm.DB
-	dbMu   sync.Mutex
+	db   *gorm.DB
+	dbMu sync.Mutex
 )
 
 // InitDB инициализирует базу данных и создаёт таблицы.
@@ -115,4 +117,46 @@ func ResetAttempts() (int64, error) {
 
 	result := db.Session(&gorm.Session{AllowGlobalUpdate: true}).Delete(&Attempt{})
 	return result.RowsAffected, result.Error
+}
+
+func ExportAttempts(w io.Writer) error {
+	attempts, err := GetAllAttempts()
+	if err != nil {
+		return err
+	}
+
+	enc := json.NewEncoder(w)
+	enc.SetIndent("", "  ")
+	return enc.Encode(attempts)
+}
+
+func ImportAttempts(r io.Reader, replace bool) (int, error) {
+	if err := InitDB(); err != nil {
+		return 0, err
+	}
+
+	var attempts []Attempt
+	if err := json.NewDecoder(r).Decode(&attempts); err != nil {
+		return 0, err
+	}
+
+	if replace {
+		if _, err := ResetAttempts(); err != nil {
+			return 0, err
+		}
+	}
+
+	for i := range attempts {
+		attempts[i].ID = 0
+	}
+
+	if len(attempts) == 0 {
+		return 0, nil
+	}
+
+	if err := db.Create(&attempts).Error; err != nil {
+		return 0, err
+	}
+
+	return len(attempts), nil
 }

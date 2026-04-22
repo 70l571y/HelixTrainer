@@ -34,10 +34,67 @@ go install github.com/70l571y/HelixTrainer/cmd/hxtrainer@latest
 
 HelixTrainer хранит прогресс, базу данных и встроенные челленджи в стандартном каталоге конфигурации вашей системы:
 
-*   **Linux / macOS**: `~/.config/hxtrainer/` (или `$XDG_CONFIG_HOME/hxtrainer`)
+*   **Linux**: `~/.config/hxtrainer/` (или `$XDG_CONFIG_HOME/hxtrainer`)
+*   **macOS**: `~/Library/Application Support/hxtrainer/`
 *   **Windows**: `%APPDATA%\hxtrainer\`
 
 База данных хранится в файле `hxtrainer.db`, а каталог `challenges_data` будет автоматически создан при первом запуске установленного бинарника. Для сброса прогресса используйте `hxtrainer stats reset`.
+
+## Шпаргалка Команд
+
+```bash
+# запуск и выбор challenge
+hxtrainer play
+hxtrainer play hello_world
+hxtrainer play --track core --strategy weak-skills
+hxtrainer play --difficulty medium --tag lsp_reference
+
+# просмотр challenge-ов
+hxtrainer list
+hxtrainer list --json
+hxtrainer list --track core
+hxtrainer list --difficulty easy --tag movement_basic
+
+# статистика и история
+hxtrainer stats
+hxtrainer stats --json
+hxtrainer stats --track optional
+hxtrainer stats --difficulty hard --tag lsp_reference
+hxtrainer history
+hxtrainer history hello_world
+hxtrainer history hello_world --json
+
+# очередь практики
+hxtrainer queue
+hxtrainer queue --strategy progression
+hxtrainer queue --strategy weak-skills --track core --limit 10
+hxtrainer queue --json
+
+# перенос прогресса
+hxtrainer stats export attempts.json
+hxtrainer stats import attempts.json
+hxtrainer stats import attempts.json --replace
+
+# обслуживание
+hxtrainer stats reset
+hxtrainer stats reset --yes
+hxtrainer upgrade
+hxtrainer doctor
+hxtrainer doctor --json
+
+# shell completion
+hxtrainer completion bash
+hxtrainer completion zsh
+hxtrainer completion fish
+hxtrainer completion powershell
+
+# разработка и packaging
+go test ./...
+make test
+make build
+make install
+make release-snapshot
+```
 
 ## Использование
 
@@ -73,6 +130,19 @@ hxtrainer play <challenge_id>
 ```
 *Пример: `hxtrainer play hello_world`*
 
+Для управляемого progression доступны фильтры и стратегия выбора:
+
+```bash
+hxtrainer play --track core --strategy weak-skills
+hxtrainer play --difficulty medium --tag lsp_reference
+```
+
+Поддерживаемые стратегии:
+
+* `smart` — текущий адаптивный выбор по истории.
+* `progression` — первый нерешённый challenge по учебному порядку.
+* `weak-skills` — приоритет навыкам, которые ещё слабо покрыты практикой.
+
 
 ### 2. Список челленджей
 
@@ -94,6 +164,19 @@ hxtrainer list
 └─────────────────────────────┴────────────┴──────────┴─────────────────────────────────────────────────────────────────────┴───────────┘
 ```
 
+Если нужен машинно-читаемый вывод:
+
+```bash
+hxtrainer list --json
+```
+
+Также доступны фильтры:
+
+```bash
+hxtrainer list --track core
+hxtrainer list --difficulty easy --tag movement_basic
+```
+
 ### 3. Статистика
 
 Проверьте детальную статистику прогресса.
@@ -101,6 +184,28 @@ hxtrainer list
 ```bash
 hxtrainer stats
 ```
+
+Для интеграций и скриптов доступен JSON-режим:
+
+```bash
+hxtrainer stats --json
+```
+
+Фильтры работают и для статистики:
+
+```bash
+hxtrainer stats --track optional
+hxtrainer stats --difficulty hard --tag lsp_reference
+```
+
+Экспорт и импорт прогресса:
+
+```bash
+hxtrainer stats export attempts.json
+hxtrainer stats import attempts.json
+hxtrainer stats import attempts.json --replace
+```
+
 Это меню покажет ваши лучшие времена и вехи. Каждый уровень имеет трофеи, которые вы получаете за быстрое прохождение: бронза, серебро, золото и автор.
 
 ```
@@ -115,7 +220,28 @@ hxtrainer stats
 └─────────────────────────────┴───────────┴───────────┴───────────┴──────────┘
 ```
 
-### 4. Сброс статистики
+### 4. Очередь практики
+
+Чтобы посмотреть, что тренировать дальше, не открывая Helix сразу:
+
+```bash
+hxtrainer queue
+hxtrainer queue --strategy progression
+hxtrainer queue --strategy weak-skills --track core --limit 10
+hxtrainer queue --json
+```
+
+### 5. История попыток
+
+Историю можно посмотреть по одному challenge или по всем сразу:
+
+```bash
+hxtrainer history
+hxtrainer history hello_world
+hxtrainer history hello_world --json
+```
+
+### 6. Сброс статистики
 
 Если нужно начать заново, сбросьте статистику отдельной командой. Она удаляет прогресс попыток и рекорды, но не удаляет челленджи.
 
@@ -131,12 +257,55 @@ hxtrainer stats reset
 hxtrainer stats reset --yes
 ```
 
-### 5. Обновление
+### 7. Обновление
 
 Поддерживайте HelixTrainer в актуальном состоянии, чтобы получать новые челленджи.
+Команда `hxtrainer upgrade` проверяет наличие новой версии через GitHub Releases и подсказывает команду обновления.
 
 ```bash
 go install github.com/70l571y/HelixTrainer/cmd/hxtrainer@latest
+```
+
+### 8. Диагностика окружения
+
+Если `hxtrainer play` не запускается как ожидается, проверьте окружение:
+
+```bash
+hxtrainer doctor
+```
+
+Команда покажет наличие `hx` и `git`, а также ключевые пути данных HelixTrainer.
+Для автоматизации есть JSON-режим:
+
+```bash
+hxtrainer doctor --json
+```
+
+### 9. Shell completion
+
+Можно сгенерировать completion script для shell:
+
+```bash
+hxtrainer completion bash
+hxtrainer completion zsh
+hxtrainer completion fish
+hxtrainer completion powershell
+```
+
+## Packaging
+
+Для локальной сборки и проверки:
+
+```bash
+make test
+make build
+make install
+```
+
+Для snapshot-релиза через GoReleaser:
+
+```bash
+make release-snapshot
 ```
 
 ## Разработка

@@ -36,6 +36,12 @@ type Challenge struct {
 	ValidationMap  map[string]string `json:"-"`
 }
 
+type ChallengeFilter struct {
+	Difficulty string
+	Tags       []string
+	Track      string
+}
+
 // GetCommentPrefix возвращает префикс комментариев для языка.
 func GetCommentPrefix(language string) string {
 	switch language {
@@ -203,6 +209,65 @@ func SortForProgression(challenges []Challenge) {
 	})
 }
 
+func FilterChallenges(challenges []Challenge, filter ChallengeFilter) []Challenge {
+	var filtered []Challenge
+	wantDifficulty := strings.ToLower(strings.TrimSpace(filter.Difficulty))
+	wantTrack := normalizeTrackTag(filter.Track)
+	wantTags := make([]string, 0, len(filter.Tags))
+	for _, tag := range filter.Tags {
+		tag = strings.TrimSpace(tag)
+		if tag != "" {
+			wantTags = append(wantTags, tag)
+		}
+	}
+
+	for _, challenge := range challenges {
+		if wantDifficulty != "" && strings.ToLower(strings.TrimSpace(challenge.Difficulty)) != wantDifficulty {
+			continue
+		}
+		if wantTrack != "" && !hasTag(challenge.Tags, wantTrack) {
+			continue
+		}
+		if len(wantTags) > 0 && !hasAnyTag(challenge.Tags, wantTags) {
+			continue
+		}
+		filtered = append(filtered, challenge)
+	}
+
+	return filtered
+}
+
+func normalizeTrackTag(track string) string {
+	switch strings.ToLower(strings.TrimSpace(track)) {
+	case "", "any":
+		return ""
+	case "core", "hotkey", "core_hotkey":
+		return "track_core_hotkey"
+	case "optional", "command", "command_line", "optional_command_line":
+		return "track_optional_command_line"
+	default:
+		return track
+	}
+}
+
+func hasTag(tags []string, want string) bool {
+	for _, tag := range tags {
+		if tag == want {
+			return true
+		}
+	}
+	return false
+}
+
+func hasAnyTag(tags []string, want []string) bool {
+	for _, tag := range want {
+		if hasTag(tags, tag) {
+			return true
+		}
+	}
+	return false
+}
+
 // SelectSmartChallenge выбирает следующий челлендж на основе истории.
 func SelectSmartChallenge(challenges []Challenge) Challenge {
 	if len(challenges) == 0 {
@@ -268,4 +333,109 @@ func SelectSmartChallenge(challenges []Challenge) Challenge {
 	// fallback
 	SortForProgression(challenges)
 	return challenges[0]
+}
+
+func SelectProgressionChallenge(challenges []Challenge, attempts []database.Attempt) Challenge {
+	if len(challenges) == 0 {
+		return Challenge{}
+	}
+
+	filtered := append([]Challenge(nil), challenges...)
+	SortForProgression(filtered)
+	solved := solvedChallenges(attempts)
+	for _, challenge := range filtered {
+		if !solved[challenge.ID] {
+			return challenge
+		}
+	}
+	return filtered[0]
+}
+
+func SelectWeakestChallenge(challenges []Challenge, attempts []database.Attempt) Challenge {
+	if len(challenges) == 0 {
+		return Challenge{}
+	}
+
+	solved := solvedChallenges(attempts)
+	tagScores := make(map[string]int)
+	tagPending := make(map[string]int)
+	tagSolved := make(map[string]int)
+
+	for _, challenge := range challenges {
+		for _, tag := range nonTrackTags(challenge.Tags) {
+			if solved[challenge.ID] {
+				tagSolved[tag]++
+			} else {
+				tagPending[tag]++
+			}
+		}
+	}
+
+	for _, attempt := range attempts {
+		if attempt.IsCorrect {
+			continue
+		}
+		challenge := findChallengeByID(challenges, attempt.ChallengeID)
+		if challenge.ID == "" {
+			continue
+		}
+		for _, tag := range nonTrackTags(challenge.Tags) {
+			tagScores[tag] += 2
+		}
+	}
+
+	best := Challenge{}
+	bestScore := -1
+	for _, challenge := range challenges {
+		if solved[challenge.ID] {
+			continue
+		}
+
+		score := 0
+		for _, tag := range nonTrackTags(challenge.Tags) {
+			score += tagScores[tag] + tagPending[tag]
+			if tagSolved[tag] == 0 {
+				score += 5
+			}
+		}
+		if score > bestScore || (score == bestScore && lessByProgression(challenge, best)) {
+			best = challenge
+			bestScore = score
+		}
+	}
+
+	if best.ID != "" {
+		return best
+	}
+	return SelectProgressionChallenge(challenges, attempts)
+}
+
+func solvedChallenges(attempts []database.Attempt) map[string]bool {
+	solved := make(map[string]bool)
+	for _, attempt := range attempts {
+		if attempt.IsCorrect {
+			solved[attempt.ChallengeID] = true
+		}
+	}
+	return solved
+}
+
+func nonTrackTags(tags []string) []string {
+	var out []string
+	for _, tag := range tags {
+		if strings.HasPrefix(tag, "track_") {
+			continue
+		}
+		out = append(out, tag)
+	}
+	return out
+}
+
+func findChallengeByID(challenges []Challenge, id string) Challenge {
+	for _, challenge := range challenges {
+		if challenge.ID == id {
+			return challenge
+		}
+	}
+	return Challenge{}
 }
